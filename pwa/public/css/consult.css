@@ -1,0 +1,182 @@
+/* ==================================== */
+/* CONSULTA DETALLADA DE LOTES */
+/* ==================================== */
+
+.consult-container {
+  background-color: #f7f9fc;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.consult-header {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0 0;
+}
+
+.filters-card,
+.results-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.filters-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: end;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  grid-column: span 3;
+  justify-content: flex-end;
+}
+
+.btn-primary {
+  background-color: #104f32;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #156946;
+}
+
+.btn-secondary {
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: #444;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.results-table th {
+  text-align: left;
+  padding: 10px;
+  background-color: #f5f7f9;
+  color: #555;
+  font-size: 13px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.results-table td {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  color: #444;
+}
+
+.text-alert {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.text-active {
+  color: #388e3c;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.alert {
+  background-color: #fdecea;
+  color: #c62828;
+}
+
+.status-badge.success {
+  background-color: #e6f7e6;
+  color: #2e7d32;
+}
+
+.view-link {
+  color: #1b5e20;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #666;
+}
+
+.page-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.page-btn {
+  background: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.page-btn.active {
+  background-color: #104f32;
+  color: #fff;
+  border-color: #104f32;
+}

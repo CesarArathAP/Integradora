@@ -1,0 +1,44 @@
+/* public/styles/app.css */
+
+/* ---------------------------------------------------- */
+/* 1. Estilos para la barra de título personalizada */
+/* ---------------------------------------------------- */
+#title-bar {
+  /* Fija el elemento en la parte superior de la ventana */
+  position: fixed;
+  z-index: 100; /* Asegura que esté por encima de otros elementos */
+  
+  /* Utiliza las variables de entorno para posicionar y dimensionar el área 
+     donde normalmente iría la barra de título. */
+  
+  /* Posición y dimensiones dinámicas: */
+  left: env(titlebar-area-x, 0);
+  top: env(titlebar-area-y, 0);
+  height: env(titlebar-area-height, 50px); 
+  width: env(titlebar-area-width, 100%);
+  
+  /* Habilita el arrastre: Permite al usuario mover la ventana arrastrando esta área */
+  app-region: drag; 
+  
+  /* Estilos visuales de la barra de título: */
+  background-color: #2196f3; /* Coincide con tu theme_color */
+  color: white;
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  padding-left: 15px; /* Espaciado a la izquierda */
+  font-size: 1.1em;
+}
+
+/* ---------------------------------------------------- */
+/* 2. Ajuste para el contenido principal (body) */
+/* ---------------------------------------------------- */
+body {
+  /* CRUCIAL: Añade un margen superior al cuerpo para evitar que el contenido
+     principal quede oculto o superpuesto por la barra de título fija.
+     El margen se ajusta dinámicamente con la altura de la barra de título. */
+  padding-top: env(titlebar-area-height, 50px);
+  
+  /* Reseteos básicos si no tienes uno global */
+  margin: 0;
+  box-sizing: border-box; 
+}

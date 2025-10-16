@@ -1,0 +1,18 @@
+<section class="login-container">
+    <div class="logo-box">
+        <img src="../../public/icon-512x512.png" alt="Logo" class="logo-icon" />
+        <link rel="stylesheet" href="../../public/css/login.css" />
+        <h1 class="app-title">Trazabilidad<br />Agrícola</h1>
+    </div>
+
+    <h2 class="login-title">Login PWA</h2>
+
+    <form class="login-form" method="POST" action="/login/auth">
+        <input type="text" id="usuario" name="usuario" placeholder="Usuario" required />
+        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required />
+        <button type="submit" class="btn-login">Ingresar</button>
+    </form>
+
+    <p id="mensaje" class="mensaje"></p>
+
+    </section>
