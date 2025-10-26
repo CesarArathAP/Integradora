@@ -1,0 +1,445 @@
+/* Variables para colores, incluyendo algunos nuevos de la imagen */
+:root {
+    --color-primary-green: #38a169; /* Para 'Marcar como Resuelto' y éxito */
+    --color-secondary-green: #d1fae5; /* Fondo de 'Resuelto' */
+    --color-alert-red: #e53e3e; /* Alertas ALTAS */
+    --color-light-red: #fed7d7; /* Fondo de alerta roja */
+    --color-orange: #dd6b20; /* Alertas MEDIAS, texto de "Urgentes" */
+    --color-light-orange: #fbd38d; /* Fondo de alerta naranja */
+    --color-blue-dark: #2c5282; /* Títulos principales, texto */
+    --color-gray-text: #4a5568; /* Texto general más oscuro */
+    --color-gray-light: #f7fafc; /* Fondo general, bordes claros */
+    --color-white: #ffffff;
+    --color-status-pending: #a0aec0; /* Bordes y texto de alerts */
+    --color-highlight-blue: #3182ce; /* Acciones resaltadas, enlaces */
+    --color-medium-severity: #ecc94b; /* Color para severidad MEDIA */
+    --color-low-severity: #4299e1; /* Color para severidad BAJA (azul, como en la imagen) */
+    --color-dark-gray-bg: #edf2f7; /* Fondo gris oscuro para el main-container */
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE STYLES / MOBILE FIRST (<= 767px) */
+/* ------------------------------------------------------------------ */
+
+body {
+    background-color: var(--color-dark-gray-bg); /* Fondo gris de la página */
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-white); /* El contenido principal es blanco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Apila los elementos en móvil */
+    gap: 20px;
+}
+
+/* Header Section */
+.header-section {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-gray-light);
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-gray-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    transition: color 0.2s ease;
+}
+
+.back-button:hover {
+    color: var(--color-highlight-blue);
+}
+
+.back-icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+.module-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-blue-dark);
+    margin: 0 0 5px 0;
+}
+
+.module-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-gray-text);
+    margin: 0;
+}
+
+/* Audit Layout - Mobile: Columnas apiladas */
+.audit-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Panel Izquierdo: Lista de Alertas */
+.alert-list-panel {
+    background-color: var(--color-white);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.alert-list-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-blue-dark);
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-alert {
+    color: var(--color-alert-red);
+    font-size: 1.4rem;
+    margin-right: 8px;
+}
+
+.alert-count {
+    font-weight: 700;
+    color: var(--color-alert-red);
+}
+
+.alert-card {
+    background-color: var(--color-gray-light);
+    border-left: 4px solid transparent; /* Se definirá por el tipo de alerta */
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.alert-card:hover {
+    background-color: #ebf8ff;
+    border-left-color: var(--color-highlight-blue) !important;
+}
+
+.alert-card.selected {
+    border: 1px solid var(--color-highlight-blue);
+    border-left: 4px solid var(--color-highlight-blue) !important;
+    background-color: #ebf8ff;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2); /* Ring shadow */
+}
+
+.alert-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.alert-card-type {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-blue-dark);
+}
+
+.alert-card-severity {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 9999px; /* Pill shape */
+    color: var(--color-white);
+}
+
+.alert-card-severity.high { background-color: var(--color-alert-red); }
+.alert-card-severity.medium { background-color: var(--color-orange); }
+.alert-card-severity.low { background-color: var(--color-low-severity); } /* Azul */
+
+.alert-card-info, .alert-card-time {
+    font-size: 0.85rem;
+    color: var(--color-gray-text);
+    margin: 3px 0;
+}
+
+.history-button {
+    background-color: transparent;
+    border: none;
+    color: var(--color-highlight-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    border-top: 1px solid var(--color-gray-light);
+    margin-top: 15px;
+}
+
+.history-button:hover {
+    text-decoration: underline;
+}
+
+/* Panel Derecho: Detalle de la Alerta Seleccionada */
+.alert-detail-panel {
+    background-color: var(--color-white);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.detail-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-blue-dark);
+    margin: 0;
+}
+
+.close-detail-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-status-pending);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.close-detail-button:hover {
+    color: var(--color-alert-red);
+}
+
+.detail-lot-id {
+    font-size: 0.95rem;
+    color: var(--color-gray-text);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-gray-light);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    color: var(--color-status-pending);
+    margin-bottom: 3px;
+}
+
+.detail-value {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-gray-text);
+}
+
+.high-text {
+    color: var(--color-alert-red);
+    font-weight: 700;
+}
+
+.highlight-blue-text {
+    color: var(--color-highlight-blue);
+    font-weight: 700;
+}
+
+.section-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-blue-dark);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-gray-light);
+}
+
+.problem-description {
+    font-size: 0.95rem;
+    color: var(--color-gray-text);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.justification-box {
+    background-color: var(--color-gray-light);
+    border-left: 4px solid var(--color-highlight-blue);
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    line-height: 1.5;
+}
+
+.justification-box p {
+    margin: 5px 0;
+}
+
+.justification-box strong {
+    color: var(--color-blue-dark);
+}
+
+.producer-response {
+    margin-top: 15px !important;
+    padding-top: 10px;
+    border-top: 1px dotted #cbd5e0;
+}
+
+.document-link {
+    color: var(--color-highlight-blue);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.document-link:hover {
+    text-decoration: underline;
+}
+
+textarea {
+    width: 100%;
+    min-height: 90px;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.resolution-actions {
+    display: flex;
+    flex-direction: column; /* Apila botones en móvil */
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.primary-button {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+}
+
+.primary-button:hover {
+    background-color: #2f855a;
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    background-color: #e2e8f0;
+    color: var(--color-gray-text);
+}
+
+.secondary-button:hover {
+    background-color: #cbd5e0;
+    transform: translateY(-1px);
+}
+
+.check-icon {
+    font-size: 1.1rem;
+    margin-right: 8px;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERY: TABLET Y ESCRITORIO (>= 768px) */
+/* ------------------------------------------------------------------ */
+@media (min-width: 768px) {
+    .main-container {
+        padding: 30px; /* Más padding en escritorio */
+    }
+
+    .header-section {
+        display: flex;
+        flex-direction: row; /* Vuelve a línea horizontal */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan si no hay espacio */
+        align-items: flex-end; /* Alinea los elementos al final (bottom) */
+        gap: 20px;
+        justify-content: flex-start; /* Alinea al inicio */
+    }
+
+    .back-button {
+        flex: 0 0 auto; /* No crece */
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .module-title {
+        font-size: 2.2rem; /* Título más grande */
+        margin-right: 15px; /* Espacio entre título y subtitulo */
+        margin-bottom: 0;
+    }
+
+    .module-subtitle {
+        flex-grow: 1; /* Permite que el subtítulo ocupe el espacio restante */
+        margin-bottom: 0;
+    }
+    
+    /* Audit Layout - Desktop: Dos columnas */
+    .audit-layout {
+        flex-direction: row; /* Vuelve a layout de dos columnas */
+        gap: 30px; /* Más espacio entre columnas */
+    }
+
+    .alert-list-panel {
+        flex: 0 0 300px; /* Ancho fijo para el panel de la lista */
+        padding: 20px;
+    }
+
+    .alert-detail-panel {
+        flex-grow: 1; /* El panel de detalle ocupa el resto del espacio */
+        padding: 25px 30px;
+    }
+
+    .detail-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en escritorio */
+    }
+
+    .resolution-actions {
+        flex-direction: row; /* Botones en fila */
+        gap: 15px;
+    }
+
+    .action-button {
+        width: auto; /* Ancho auto, ya que están en fila */
+    }
+}

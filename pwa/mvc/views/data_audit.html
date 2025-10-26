@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="../../public/css/data_audit.css" />
+
+<div class="main-container">
+    <div class="header-section">
+        <a href="/login/auth" class="back-button" title="Regresar a la página principal">
+            <span class="back-icon">←</span> Regresar al Inicio
+        </a>
+        <h1 class="module-title">Módulo de Auditoría de Datos</h1>
+        <p class="module-subtitle">Revisión y resolución de alertas de trazabilidad generadas por inconsistencias.</p>
+    </div>
+
+    <div class="audit-layout">
+        <div class="alert-list-panel">
+            <h2 class="alert-list-title">
+                <span class="icon-alert">▲</span> Alertas Pendientes (<span class="alert-count">5</span>)
+            </h2>
+
+            <div class="alert-card selected">
+                <div class="alert-card-header">
+                    <span class="alert-card-type high">Sobredosis de Insumo</span>
+                    <span class="alert-card-severity high">ALTA</span>
+                </div>
+                <p class="alert-card-info">LOTE-7890-CHL-P005 | Fertilizante NPK</p>
+                <p class="alert-card-time">Hace 2 días</p>
+            </div>
+
+            <div class="alert-card">
+                <div class="alert-card-header">
+                    <span class="alert-card-type medium">Omisión de Registro</span>
+                    <span class="alert-card-severity medium">MEDIA</span>
+                </div>
+                <p class="alert-card-info">LOTE-4532-JIT-P001 | Pesticida</p>
+                <p class="alert-card-time">Hace 1 día</p>
+            </div>
+
+            <div class="alert-card">
+                <div class="alert-card-header">
+                    <span class="alert-card-type low">Fecha de Cosecha Inválida</span>
+                    <span class="alert-card-severity low">BAJA</span>
+                </div>
+                <p class="alert-card-info">LOTE-9901-PEP-P010 | Fecha futura</p>
+                <p class="alert-card-time">Hace 5 horas</p>
+            </div>
+            
+            <button class="history-button">Ver Historial Resuelto</button>
+        </div>
+
+        <div class="alert-detail-panel">
+            <div class="detail-header">
+                <h2 class="detail-title">Sobredosis de Insumo</h2>
+                <button class="close-detail-button">X</button>
+            </div>
+            <p class="detail-lot-id">Lote: LOTE-7890-CHL-P005</p>
+
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <span class="detail-label">Productor</span>
+                    <span class="detail-value">María Sánchez (P005)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Fecha de Evento</span>
+                    <span class="detail-value">2024-09-05</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Severidad</span>
+                    <span class="detail-value high-text">ALTA</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Acción Actual</span>
+                    <span class="detail-value highlight-blue-text">Solicitud de Justificación</span>
+                </div>
+            </div>
+
+            <h3 class="section-heading">Descripción del Problema</h3>
+            <p class="problem-description">
+                El registro de 250 Kg de Fertilizante NPK excede el máximo permitido (150 Kg) para la etapa de
+                crecimiento en Chile Habanero. Requiere justificación o corrección de datos.
+            </p>
+
+            <h3 class="section-heading">Historial y Justificación</h3>
+            <div class="justification-box">
+                <p><strong>Auditor (Usted) - 2024-09-06:</strong></p>
+                <p>"Se solicita al productor María Sánchez adjuntar la ficha técnica que justifique el exceso de consumo de NPK. El lote está en retención de calidad."</p>
+                <p class="producer-response"><strong>Productor (P005) - 2024-09-07:</strong></p>
+                <p>"El exceso se debió a una corrección de pH. Adjunto el informe de suelo y la nueva recomendación técnica del agrónomo. El dato es correcto, el registro inicial fue un error de cálculo."</p>
+                <a href="#" class="document-link">Ver Archivo Adjunto (PDF)</a>
+            </div>
+
+            <h3 class="section-heading">Acción de Resolución</h3>
+            <textarea placeholder="Añadir una nota de resolución antes de cerrar la alerta (Máx. 200 caracteres)"></textarea>
+
+            <div class="resolution-actions">
+                <button class="action-button secondary-button">Escalar / Reasignar</button>
+                <button class="action-button primary-button">
+                    <span class="check-icon">✓</span> Marcar como Resuelto
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
