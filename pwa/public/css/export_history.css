@@ -1,0 +1,306 @@
+/* Variables (usamos las mismas que ya definiste) */
+:root {
+    --color-primary-green: #38a169;
+    --color-secondary-green: #d1fae5;
+    --color-alert-red: #e53e3e;
+    --color-orange: #dd6b20;
+    --color-blue-dark: #2c5282;
+    --color-gray-text: #4a5568;
+    --color-gray-light: #f7fafc;
+    --color-white: #ffffff;
+    --color-highlight-blue: #3182ce;
+    /* Colores específicos para formatos */
+    --color-tag-pdf: #e53e3e; /* Rojo oscuro */
+    --color-tag-xlsx: #38a169; /* Verde primario */
+    --color-tag-csv: #4299e1; /* Azul claro */
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE STYLES / MOBILE FIRST (<= 767px) */
+/* ------------------------------------------------------------------ */
+
+.main-container {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header Section */
+.page-header {
+    display: flex;
+    flex-direction: column; /* Apilado en móvil */
+    gap: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-gray-light);
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header-icon {
+    font-size: 1.5rem;
+    color: var(--color-primary-green);
+    margin-bottom: 5px;
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-blue-dark);
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    margin: 0;
+}
+
+.action-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-button {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+}
+
+.primary-button:hover {
+    background-color: #2f855a;
+}
+
+/* Filters Section */
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.filter-input, .filter-select {
+    padding: 8px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    min-width: 100%; /* Ocupa todo el ancho en móvil */
+    box-sizing: border-box;
+}
+
+.filter-select {
+    min-width: 45%;
+}
+
+.date-range {
+    display: flex;
+    gap: 10px;
+    min-width: 100%;
+}
+
+.date-input {
+    padding: 8px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+/* Table Section */
+.table-container {
+    overflow-x: auto; /* Permite scroll horizontal en móvil */
+    width: 100%;
+}
+
+.export-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Ancho mínimo para mantener la legibilidad */
+}
+
+.export-table th, .export-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+}
+
+.export-table th {
+    background-color: var(--color-gray-light);
+    color: var(--color-gray-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.export-table tbody tr:hover {
+    background-color: #f7fafc;
+}
+
+/* Format Tags */
+.format-tag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: var(--color-white);
+    display: inline-block;
+}
+
+.tag-pdf { background-color: var(--color-tag-pdf); }
+.tag-xlsx { background-color: var(--color-tag-xlsx); }
+.tag-csv { background-color: var(--color-tag-csv); }
+
+/* Actions Column */
+.actions-col {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.action-link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    transition: color 0.2s;
+}
+
+.link-download { color: var(--color-highlight-blue); }
+.link-download:hover { color: #2b6cb0; }
+
+.link-delete { color: var(--color-alert-red); }
+.link-delete:hover { color: #c53030; }
+
+
+/* Pagination */
+.pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.pagination-info {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination-button {
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    background-color: var(--color-white);
+    color: var(--color-gray-text);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.pagination-button.active {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    border-color: var(--color-primary-green);
+}
+
+.pagination-button:hover:not(.active):not(.disabled) {
+    background-color: var(--color-gray-light);
+}
+
+.pagination-button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERY: TABLET Y ESCRITORIO (>= 768px) */
+/* ------------------------------------------------------------------ */
+@media (min-width: 768px) {
+    .main-container {
+        padding: 30px;
+    }
+
+    /* Header Horizontal Layout */
+    .page-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-info {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .header-icon {
+        margin-right: 15px;
+    }
+
+    .header-title {
+        font-size: 2.2rem;
+    }
+
+    .header-subtitle {
+        margin-left: 20px;
+        font-size: 1rem;
+        flex-grow: 1; /* Permite que el subtítulo ocupe el espacio */
+    }
+    
+    .action-button {
+        padding: 12px 20px;
+    }
+    
+    /* Filters: Se alinean horizontalmente */
+    .filters-container {
+        flex-wrap: nowrap;
+        gap: 15px;
+    }
+    
+    .filter-input {
+        min-width: 250px;
+    }
+    
+    .filter-select {
+        min-width: 150px;
+    }
+    
+    .date-range {
+        min-width: 180px;
+        max-width: 200px;
+    }
+
+    /* Table adjustments */
+    .export-table th, .export-table td {
+        padding: 15px 10px;
+    }
+
+    /* Pagination Horizontal */
+    .pagination-container {
+        flex-direction: row;
+        padding: 15px 10px 0 10px;
+    }
+}

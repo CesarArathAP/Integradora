@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="../../public/css/export_history.css" />
+
+<div class="main-container">
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">⏏</span>
+            <h1 class="header-title">Historial de Exportaciones</h1>
+            <p class="header-subtitle">Listado y gestión de todos los reportes de auditoría y análisis generados.</p>
+        </div>
+        <button class="action-button primary-button">
+            + Generar Nuevo Reporte
+        </button>
+    </header>
+
+    <div class="filters-container">
+        <input type="text" placeholder="Buscar por nombre de reporte o usuario..." class="filter-input"/>
+        
+        <select class="filter-select">
+            <option value="all">Todos los Formatos</option>
+            <option value="pdf">PDF</option>
+            <option value="xlsx">XLSX</option>
+            <option value="csv">CSV</option>
+        </select>
+        
+        <div class="date-range">
+            <input type="date" value="2025-10-23" class="date-input" title="Fecha Inicial"/>
+            <input type="date" value="2025-10-25" class="date-input" title="Fecha Final"/>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table class="export-table">
+            <thead>
+                <tr>
+                    <th>NOMBRE DEL REPORTE</th>
+                    <th>GENERADO POR</th>
+                    <th>FECHA DE GENERACIÓN</th>
+                    <th>FORMATO</th>
+                    <th>PERIODO CUBIERTO</th>
+                    <th class="actions-col">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Reporte de Auditoría Lotes CHL (Q4)</td>
+                    <td>Auditor Principal</td>
+                    <td>2025-10-14 10:45</td>
+                    <td><span class="format-tag tag-pdf">PDF</span></td>
+                    <td>01/07/2025 - 30/09/2025</td>
+                    <td class="actions-col">
+                        <a href="#" class="action-link link-download">Descargar</a>
+                        <a href="#" class="action-link link-delete">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Datos Crudos Lotes con Alerta (Sept)</td>
+                    <td>Analista Junior</td>
+                    <td>2025-10-12 14:20</td>
+                    <td><span class="format-tag tag-xlsx">XLSX</span></td>
+                    <td>01/09/2025 - 30/09/2025</td>
+                    <td class="actions-col">
+                        <a href="#" class="action-link link-download">Descargar</a>
+                        <a href="#" class="action-link link-delete">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Insumos Totales por Región (Anual)</td>
+                    <td>Super Admin</td>
+                    <td>2025-10-01 08:00</td>
+                    <td><span class="format-tag tag-csv">CSV</span></td>
+                    <td>01/01/2025 - 30/09/2025</td>
+                    <td class="actions-col">
+                        <a href="#" class="action-link link-download">Descargar</a>
+                        <a href="#" class="action-link link-delete">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Informe Mensual de Producción (Sept)</td>
+                    <td>Productor 005</td>
+                    <td>2025-09-30 11:15</td>
+                    <td><span class="format-tag tag-pdf">PDF</span></td>
+                    <td>01/09/2025 - 30/09/2025</td>
+                    <td class="actions-col">
+                        <a href="#" class="action-link link-download">Descargar</a>
+                        <a href="#" class="action-link link-delete">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Consumo de Agua por Lote (Q3)</td>
+                    <td>Analista Junior</td>
+                    <td>2025-10-05 16:30</td>
+                    <td><span class="format-tag tag-xlsx">XLSX</span></td>
+                    <td>01/07/2025 - 30/09/2025</td>
+                    <td class="actions-col">
+                        <a href="#" class="action-link link-download">Descargar</a>
+                        <a href="#" class="action-link link-delete">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination-container">
+        <span class="pagination-info">Mostrando 1 a 10 de 32 exportaciones</span>
+        <div class="pagination-controls">
+            <button class="pagination-button disabled">Anterior</button>
+            <button class="pagination-button active">1</button>
+            <button class="pagination-button">2</button>
+            <button class="pagination-button">3</button>
+            <button class="pagination-button">Siguiente</button>
+        </div>
+    </div>
+</div>

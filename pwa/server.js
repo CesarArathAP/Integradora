@@ -7,6 +7,7 @@ const { AuthController } = require("./mvc/controllers/AuthController");
 const { ViewConsultController } = require("./mvc/controllers/ViewConsult");
 const { ViewLotDetailController } = require("./mvc/controllers/ViewLotDetailController");
 const { DataAuditController } = require("./mvc/controllers/DataAuditController");
+const { ExportHistoryController } = require("./mvc/controllers/ExportHistoryController");
 
 const app = express();
 const PORT = 3000;
@@ -35,6 +36,10 @@ app.get("/lote/detalle", (req, res) => {
 
 app.get("/auditoria/datos", (req, res) => {
     DataAuditController.renderVista(res);
+});
+
+app.get("/historial/exportaciones", (req, res) => {
+    ExportHistoryController.renderVista(res);
 });
 
 // Fallback
