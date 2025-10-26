@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const { ViewLoginController } = require("./mvc/controllers/ViewLogin");
 const { AuthController } = require("./mvc/controllers/AuthController");
 const { ViewConsultController } = require("./mvc/controllers/ViewConsult");
+const { ViewLotDetailController } = require("./mvc/controllers/ViewLotDetailController");
 
 const app = express();
 const PORT = 3000;
@@ -25,6 +26,10 @@ app.post("/login/auth", (req, res) => {
 
 app.get("/login/auth/consulta", (req, res) => {
     ViewConsultController.renderVista(res, "Administrador");
+});
+
+app.get("/lote/detalle", (req, res) => {
+  ViewLotDetailController.renderVista(res);
 });
 
 // Fallback

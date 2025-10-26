@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="../../public/css/lot_detail_traceability.css" />
+
+<div class="main-container">
+    <header class="header">
+        <div class="lot-info-group"> 
+            <a href="/login/auth" class="back-button" title="Regresar a la página principal">
+                <span class="back-icon">←</span> Regresar
+            </a>
+            <div class="lot-info">
+                <span class="lot-id">LOTE-7890-CHL-P005</span>
+            </div>
+        </div>
+        
+        <div class="header-actions">
+            <div class="alert-box">
+                <span class="alert-icon">▲</span>
+                <span class="alert-text">Trazabilidad con ALERTA</span>
+            </div>
+            <button class="export-button">
+                <span class="export-icon">❐</span>
+                Exportar Historial (PDF)
+            </button>
+        </div>
+    </header>
+
+    <div class="summary-grid">
+        <div class="summary-item">
+            <div class="label">Cultivo:</div>
+            <div class="value">Chile Habanero</div>
+        </div>
+        <div class="summary-item">
+            <div class="label">Productor:</div>
+            <div class="value">María Sánchez (P005)</div>
+        </div>
+        <div class="summary-item">
+            <div class="label">Superficie</div>
+            <div class="value">2.5 Ha</div>
+        </div>
+        <div class="summary-item">
+            <div class="label">Fecha de Siembra</div>
+            <div class="value">2024-08-15</div>
+        </div>
+        <div class="summary-item">
+            <div class="label">Días de Crecimiento</div>
+            <div class="value large-value">65 Días</div>
+        </div>
+        <div class="summary-item">
+            <div class="label">Etapa Actual</div>
+            <div class="value stage-value">Floración</div>
+        </div>
+    </div>
+
+    <hr class="separator"/>
+
+    <div class="content-layout">
+        <div class="timeline-section">
+            <h2 class="section-title">Línea de Tiempo de Producción</h2>
+            
+            <div class="timeline-event event-green">
+                <div class="event-icon">T</div>
+                <div class="event-details">
+                    <h3 class="event-title">1. Siembra</h3>
+                    <p><strong>Fecha de Registro:</strong> 2024-08-15</p>
+                    <p>Inicio del ciclo en Invernadero 3, con variedad de semilla 'Red Savina'.</p>
+                    <p><strong>Semilla Aplicada:</strong> <span class="highlight-units">3,000 unidades</span></p>
+                </div>
+            </div>
+
+            <div class="timeline-event event-red">
+                <div class="event-icon-alert">!</div>
+                <div class="event-details">
+                    <div class="alert-header">
+                        <span class="alert-icon-small">!</span>
+                        <span class="alert-type">ALERTA</span>
+                        <span class="alert-sub-title">Insumo Aplicado: Fertilizante NPK</span>
+                    </div>
+                    <p><strong>Fecha de Registro:</strong> 2024-09-05 (Día 21)</p>
+
+                    <div class="system-alert">
+                        <span class="alert-icon-small">▲</span>
+                        <span class="alert-text-bold">ALERTA DE SISTEMA: Cantidad Excesiva</span>
+                        <p class="alert-message">El consumo de 250 Kg excede el promedio histórico de 150 Kg para esta etapa y cultivo, ¡requiere auditoría!</p>
+                    </div>
+
+                    <ul class="insumo-details">
+                        <li>**Insumo:** **Fertilizante NPK (15-15-15)**</li>
+                        <li>**Proveedor:** **AgroQuímicos del Sureste**</li>
+                        <li>**Cantidad Registrada:** **250 Kg**</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-event event-green">
+                <div class="event-icon">E</div>
+                <div class="event-details">
+                    <h3 class="event-title">2. Riego y Crecimiento</h3>
+                    <p><strong>Periodo:</strong> 2024-09-06 a 2024-10-10</p>
+                    <p>Registro de 5 riegos por goteo programado. Control de temperatura promedio 28°C.</p>
+                    <p><strong>Consumo Total de Agua:</strong> <span class="highlight-units">30,000 Litros</span></p>
+                </div>
+            </div>
+
+            <div class="timeline-event event-blue-dot">
+                <div class="event-icon">F</div>
+                <div class="event-details">
+                    <h3 class="event-title">3. Floración (Actual)</h3>
+                    <p><strong>Estimado de Cosecha:</strong> 2024-11-25</p>
+                    <p>Esperando registro de la etapa de floración y la siguiente aplicación de insumos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-panel">
+            <div class="photo-evidence">
+                <h2 class="section-title">Evidencia Fotográfica</h2>
+                <div class="photo-grid">
+                    <a href="../../public/icon-192x192.png" class="photo-link" title="Ver Siembra Inicial">
+                        <img src="../../public/icon-192x192.png" alt="Siembra Inicial" class="photo-image"/>
+                    </a>
+                    <a href="#" class="photo-link" title="Ver Aplicación Insumo">
+                        <img src="placeholder-insumo.png" alt="Aplicación Insumo" class="photo-image"/>
+                    </a>
+                    <a href="#" class="photo-link" title="Ver Estado Actual D65">
+                        <img src="placeholder-estado.png" alt="Estado Actual D65" class="photo-image"/>
+                    </a>
+                    <a href="#" class="photo-link" title="Ver Más Fotos">
+                        <img src="placeholder-more.png" alt="Ver Más Fotos" class="photo-image"/>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="panel-separator"/>
+
+            <div class="audit-decision">
+                <h2 class="section-title">Decisión de Auditoría</h2>
+                <div class="audit-status">Estado Actual: PENDIENTE DE REVISIÓN</div>
+                <label for="audit-notes">Notas del Auditor</label>
+                <textarea id="audit-notes" placeholder="Escriba su justificación o solicitud de corrección aquí..."></textarea>
+                <div class="audit-actions">
+                    <button class="action-button correction-button">Solicitar Corrección</button>
+                    <button class="action-button approve-button">Aprobar Lote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
