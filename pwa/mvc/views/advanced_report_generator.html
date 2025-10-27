@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="../../public/css/advanced_report_generator.css" />
+
+<div class="main-container">
+    <a href="/login/auth" class="back-to-home-button" title="Regresar a la página principal">
+        <span class="back-icon">←</span> Regresar al Inicio
+    </a>
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">⛭</span>
+            <h1 class="header-title">Generador de Reportes Avanzados</h1>
+            <p class="header-subtitle">Construya informes personalizados para auditorías y análisis de alto nivel.</p>
+        </div>
+        <a href="/historial/exportaciones" class="history-button">
+            Ver Historial de Exportaciones
+        </a>
+    </header>
+
+    <div class="form-container">
+        
+        <section class="report-section">
+            <h2 class="section-title">1. Definir Contenido y Periodo</h2>
+            <div class="input-group-row">
+                <div class="input-field">
+                    <label for="report-type">Tipo de Reporte *</label>
+                    <select id="report-type" class="report-select required">
+                        <option value="">Seleccione el tipo de análisis...</option>
+                        <option value="trazabilidad">Trazabilidad Completa</option>
+                        <option value="consumo">Consumo de Insumos</option>
+                        <option value="produccion">Métricas de Producción</option>
+                        <option value="auditoria">Alertas de Auditoría</option>
+                    </select>
+                </div>
+                <div class="input-field date-field">
+                    <label for="date-start">Fecha de Inicio (Desde)</label>
+                    <input type="date" id="date-start" class="report-input" placeholder="dd/mm/aaaa"/>
+                </div>
+                <div class="input-field date-field">
+                    <label for="date-end">Fecha de Fin (Hasta)</label>
+                    <input type="date" id="date-end" class="report-input" placeholder="dd/mm/aaaa"/>
+                </div>
+            </div>
+        </section>
+
+        <section class="report-section">
+            <h2 class="section-title">2. Filtros de Segmentación (Opcional)</h2>
+            <div class="input-group-row three-cols">
+                <div class="input-field">
+                    <label for="region">Región</label>
+                    <select id="region" class="report-select">
+                        <option value="all">Todas las Regiones</option>
+                        <option value="norte">Norte</option>
+                        <option value="centro">Centro</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <label for="producer">Productor / Agricultor</label>
+                    <select id="producer" class="report-select">
+                        <option value="all">Todos los Productores</option>
+                        <option value="P005">María Sánchez (P005)</option>
+                        <option value="P008">Juan Pérez (P008)</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <label for="crop-type">Tipo de Cultivo</label>
+                    <select id="crop-type" class="report-select">
+                        <option value="all">Todos los Cultivos</option>
+                        <option value="chile">Chile Habanero</option>
+                        <option value="jitomate">Jitomate</option>
+                        <option value="brocoli">Brócoli</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="input-group-row lot-input">
+                <div class="input-field">
+                    <label for="lot-id">Lote Específico (ID)</label>
+                    <input type="text" id="lot-id" class="report-input" placeholder="Ej: LOTE-7890-CHL-P005"/>
+                </div>
+            </div>
+        </section>
+
+        <section class="report-section">
+            <h2 class="section-title">3. Generación y Exportación</h2>
+            <div class="generation-actions">
+                <button class="action-button preview-button">
+                    <span class="icon-eye">👁</span> Generar Vista Previa
+                </button>
+                <div class="export-buttons">
+                    <button class="action-button export-pdf">
+                        <span class="icon-pdf"></span> Exportar a PDF
+                    </button>
+                    <button class="action-button export-excel">
+                        <span class="icon-excel"></span> Exportar a Excel
+                    </button>
+                    <button class="action-button export-csv">
+                        <span class="icon-csv"></span> Exportar a CSV
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</div>

@@ -19,6 +19,26 @@
 /* BASE STYLES / MOBILE FIRST (<= 767px) */
 /* ------------------------------------------------------------------ */
 
+.back-to-home-button {
+    text-decoration: none;
+    color: var(--color-gray-text); 
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0 15px 0; /* Espacio para separarlo del header */
+    transition: color 0.2s;
+}
+
+.back-to-home-button:hover {
+    color: var(--color-highlight-blue);
+}
+
+.back-icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
 .main-container {
     font-family: Arial, sans-serif;
     max-width: 1200px;
@@ -302,5 +322,9 @@
     .pagination-container {
         flex-direction: row;
         padding: 15px 10px 0 10px;
+    }
+
+    .back-to-home-button {
+        padding: 0 0 20px 0; /* Ajuste para escritorio */
     }
 }
