@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="../../public/css/producer_list.css" />
+
+<div class="main-container">
+    <a href="/login/auth" class="back-to-home-button" title="Regresar a la página principal">
+        <span class="back-icon">←</span> Regresar al Inicio
+    </a>
+    
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">🧑‍🌾</span>
+            <h1 class="header-title">Listado de Productores (Agricultores)</h1>
+            <p class="header-subtitle">Gestión de la información de contacto y resumen de actividad.</p>
+        </div>
+    </header>
+
+    <div class="filters-actions-container">
+        <input type="text" placeholder="Buscar por Nombre, ID o Email..." class="filter-input"/>
+        
+        <select class="filter-select">
+            <option value="activo">Estado: Activo</option>
+            <option value="inactivo">Estado: Inactivo</option>
+            <option value="suspendido">Estado: Suspendido</option>
+            <option value="todos">Estado: Todos</option>
+        </select>
+        
+        <button class="action-button primary-button large-button">
+            + Nuevo Productor
+        </button>
+    </div>
+
+    <div class="list-panel">
+        <h2 class="list-title">Productores Registrados <span class="total-count">(Total: 8)</span></h2>
+        
+        <div class="table-container">
+            <table class="producers-table">
+                <thead>
+                    <tr>
+                        <th>PRODUCTOR / ID</th>
+                        <th>CONTACTO</th>
+                        <th>INVERNADEROS</th>
+                        <th>LOTES ACTIVOS</th>
+                        <th>ESTADO</th>
+                        <th class="actions-col">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong class="producer-name">Juan Pérez Martínez</strong>
+                            <span class="producer-id">ID: P001</span>
+                        </td>
+                        <td>
+                            <span class="contact-phone">55 1234 5678</span>
+                            <span class="contact-email">jperez@agri.com</span>
+                        </td>
+                        <td>4</td>
+                        <td>12</td>
+                        <td><span class="status-tag tag-active">Activo</span></td>
+                        <td class="actions-col">
+                            <a href="#" class="action-link link-detail">Ver Detalle</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong class="producer-name">María Sánchez López</strong>
+                            <span class="producer-id">ID: P005</span>
+                        </td>
+                        <td>
+                            <span class="contact-phone">55 9876 5432</span>
+                            <span class="contact-email">msanchez@agri.com</span>
+                        </td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td><span class="status-tag tag-active">Activo</span></td>
+                        <td class="actions-col">
+                            <a href="#" class="action-link link-detail">Ver Detalle</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong class="producer-name">Cooperativa del Valle</strong>
+                            <span class="producer-id">ID: C003</span>
+                        </td>
+                        <td>
+                            <span class="contact-phone">55 3333 4444</span>
+                            <span class="contact-email">contacto@valle.org</span>
+                        </td>
+                        <td>8</td>
+                        <td>0</td>
+                        <td><span class="status-tag tag-suspended">Suspendido</span></td>
+                        <td class="actions-col">
+                            <a href="#" class="action-link link-detail">Ver Detalle</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="pagination-container">
+            <span class="pagination-info">Mostrando 1 a 10 de 25 Productores</span>
+            <div class="pagination-controls">
+                <button class="pagination-button disabled">Anterior</button>
+                <button class="pagination-button active">1</button>
+                <button class="pagination-button">2</button>
+                <button class="pagination-button">3</button>
+                <button class="pagination-button">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
