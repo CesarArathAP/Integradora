@@ -1,117 +1,121 @@
 <link rel="stylesheet" href="../../public/css/consult.css" />
 
 <div class="consult-container">
-  <!-- Encabezado principal -->
-  <section class="consult-header">
-    <h2 class="section-title">Consulta Detallada de Lotes</h2>
-    <p class="section-subtitle">
-      Utilice los filtros para encontrar el historial de trazabilidad de cualquier lote.
-    </p>
-  </section>
+    
+    <a href="/login/auth" class="back-to-home-button" title="Regresar a la página principal">
+        <span class="back-icon">←</span> Regresar al Inicio
+    </a>
+    
+    <section class="consult-header">
+        <h2 class="section-title">Consulta Detallada de Lotes</h2>
+        <p class="section-subtitle">
+            Utilice los filtros para encontrar el historial de trazabilidad de cualquier lote.
+        </p>
+    </section>
 
-  <!-- Filtros de búsqueda -->
-  <section class="filters-card">
-    <h3 class="filters-title">Filtros de Búsqueda</h3>
-    <form class="filters-grid">
-      <div class="form-group">
-        <label for="lote-id">ID de Lote / Código QR</label>
-        <input
-          type="text"
-          id="lote-id"
-          name="lote-id"
-          placeholder="Ej: LOTE-4532-JIT"
-        />
-      </div>
+    <section class="filters-card">
+        <h3 class="filters-title">Filtros de Búsqueda</h3>
+        <form class="filters-grid">
+            <div class="form-group">
+                <label for="lote-id">ID de Lote / Código QR</label>
+                <input
+                    type="text"
+                    id="lote-id"
+                    name="lote-id"
+                    placeholder="Ej: LOTE-4532-JIT"
+                />
+            </div>
 
-      <div class="form-group">
-        <label for="productor">Productor (Agricultor)</label>
-        <select id="productor" name="productor">
-          <option>Todos los Productores</option>
-          <option>Juan Pérez</option>
-          <option>María Sánchez</option>
-          <option>Carlos Ramírez</option>
-        </select>
-      </div>
+            <div class="form-group">
+                <label for="productor">Productor (Agricultor)</label>
+                <select id="productor" name="productor">
+                    <option>Todos los Productores</option>
+                    <option>Juan Pérez</option>
+                    <option>María Sánchez</option>
+                    <option>Carlos Ramírez</option>
+                </select>
+            </div>
 
-      <div class="form-group">
-        <label for="cultivo">Tipo de Cultivo</label>
-        <select id="cultivo" name="cultivo">
-          <option>Todos los Cultivos</option>
-          <option>Jitomate</option>
-          <option>Chile Habanero</option>
-          <option>Pepino</option>
-        </select>
-      </div>
+            <div class="form-group">
+                <label for="cultivo">Tipo de Cultivo</label>
+                <select id="cultivo" name="cultivo">
+                    <option>Todos los Cultivos</option>
+                    <option>Jitomate</option>
+                    <option>Chile Habanero</option>
+                    <option>Pepino</option>
+                </select>
+            </div>
 
-      <div class="form-group">
-        <label for="estado">Estado de Trazabilidad</label>
-        <select id="estado" name="estado">
-          <option>Todos los Estados</option>
-          <option>Activo</option>
-          <option>Con Alerta</option>
-        </select>
-      </div>
+            <div class="form-group">
+                <label for="estado">Estado de Trazabilidad</label>
+                <select id="estado" name="estado">
+                    <option>Todos los Estados</option>
+                    <option>Activo</option>
+                    <option>Con Alerta</option>
+                </select>
+            </div>
 
-      <div class="form-group">
-        <label for="fecha-inicio">Siembra: Fecha de Inicio</label>
-        <input type="date" id="fecha-inicio" name="fecha-inicio" />
-      </div>
+            <div class="form-group">
+                <label for="fecha-inicio">Siembra: Fecha de Inicio</label>
+                <input type="date" id="fecha-inicio" name="fecha-inicio" />
+            </div>
 
-      <div class="form-group">
-        <label for="fecha-fin">Siembra: Fecha de Fin</label>
-        <input type="date" id="fecha-fin" name="fecha-fin" />
-      </div>
+            <div class="form-group">
+                <label for="fecha-fin">Siembra: Fecha de Fin</label>
+                <input type="date" id="fecha-fin" name="fecha-fin" />
+            </div>
 
-      <div class="form-actions">
-        <button type="reset" class="btn-secondary">Limpiar Filtros</button>
-        <button type="submit" class="btn-primary">Buscar Lotes</button>
-      </div>
-    </form>
-  </section>
+            <div class="form-actions">
+                <button type="reset" class="btn-secondary">Limpiar Filtros</button>
+                <button type="submit" class="btn-primary">Buscar Lotes</button>
+            </div>
+        </form>
+    </section>
 
-  <!-- Resultados -->
-  <section class="results-card">
-    <h3 class="filters-title">Resultados de la Búsqueda (5 Lotes Encontrados)</h3>
+    <section class="results-card">
+        <h3 class="filters-title">Resultados de la Búsqueda (5 Lotes Encontrados)</h3>
 
-    <table class="results-table">
-      <thead>
-        <tr>
-          <th>ID DE LOTE</th>
-          <th>CULTIVO</th>
-          <th>PRODUCTOR</th>
-          <th>FECHA SIEMBRA</th>
-          <th>ESTADO</th>
-          <th>ACCIONES</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="text-alert"><a href="/lote/detalle">LOTE-7890-CHL</a></td>
-          <td>Chile Habanero</td>
-          <td>Juan Pérez</td>
-          <td>2024-08-15</td>
-          <td><span class="status-badge alert">CON ALERTA</span></td>
-          <td><a href="#" class="view-link">Ver Detalle</a></td>
-        </tr>
-        <tr>
-          <td class="text-active">LOTE-1234-JIT</td>
-          <td>Jitomate</td>
-          <td>María Sánchez</td>
-          <td>2024-09-01</td>
-          <td><span class="status-badge success">ACTIVO</span></td>
-          <td><a href="#" class="view-link">Ver Detalle</a></td>
-        </tr>
-      </tbody>
-    </table>
+        <div class="results-table-container"> 
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>ID DE LOTE</th>
+                        <th>CULTIVO</th>
+                        <th>PRODUCTOR</th>
+                        <th>FECHA SIEMBRA</th>
+                        <th>ESTADO</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-alert"><a href="/lote/detalle">LOTE-7890-CHL</a></td>
+                        <td>Chile Habanero</td>
+                        <td>Juan Pérez</td>
+                        <td>2024-08-15</td>
+                        <td><span class="status-badge alert">CON ALERTA</span></td>
+                        <td><a href="#" class="view-link">Ver Detalle</a></td>
+                    </tr>
+                    <tr>
+                        <td class="text-active">LOTE-1234-JIT</td>
+                        <td>Jitomate</td>
+                        <td>María Sánchez</td>
+                        <td>2024-09-01</td>
+                        <td><span class="status-badge success">ACTIVO</span></td>
+                        <td><a href="#" class="view-link">Ver Detalle</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <div class="pagination">
-      <p>Mostrando 1 a 5 de 48 resultados</p>
-      <div class="page-controls">
-        <button class="page-btn">Anterior</button>
-        <button class="page-btn active">1</button>
-        <button class="page-btn">2</button>
-        <button class="page-btn">Siguiente</button>
-      </div>
-    </div>
-  </section>
+        <div class="pagination">
+            <p>Mostrando 1 a 5 de 48 resultados</p>
+            <div class="page-controls">
+                <button class="page-btn disabled">Anterior</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">Siguiente</button>
+            </div>
+        </div>
+    </section>
 </div>
