@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="../../public/css/greenhouse_list.css" />
+<div class="main-container">
+    
+    <a href="/login/auth" class="back-to-home-button" title="Regresar a la página principal">
+        <span class="back-icon">←</span> Regresar al Inicio
+    </a>
+    
+    <header class="page-header">
+        <div class="header-content">
+            <div class="header-info">
+                <span class="header-icon">🏗️</span>
+                <h1 class="header-title">Listado de Invernaderos Registrados</h1>
+            </div>
+            <p class="header-subtitle">Gestión de la infraestructura física, ubicación y estado de los invernaderos.</p>
+        </div>
+        
+        <a href="/administracion/invernaderos/nuevo" class="action-button primary-button">
+            + Registrar Nuevo Invernadero
+        </a>
+    </header>
+
+    <div class="filters-container">
+        <input type="text" placeholder="Buscar por nombre de invernadero, ubicación o ID..." class="filter-input"/>
+        
+        <select class="filter-select">
+            <option value="all">Todos los Estados</option>
+            <option value="Activo">Activo</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            <option value="Inactivo">Inactivo</option>
+        </select>
+    </div>
+
+    <h3 class="section-title">Invernaderos Registrados (Total: 3)</h3>
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>INVERNADERO / ID</th>
+                    <th>UBICACIÓN PRINCIPAL</th>
+                    <th>CAPACIDAD (M²)</th>
+                    <th>ÚLTIMA AUDITORÍA</th>
+                    <th>ESTADO</th>
+                    <th class="actions-col">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Invernadero Central Alpha<br><span class="id-tag">ID: GHW001</span></td>
+                    <td>Parque Industrial Norte, Lote 5</td>
+                    <td>2,500 m²</td>
+                    <td>2025-10-20</td>
+                    <td><span class="status-tag tag-active">Activo</span></td>
+                    <td class="actions-col">
+                        <a href="/trazabilidad/detalle" class="action-link link-detail">Ver Detalle</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Invernadero de Pruebas Beta<br><span class="id-tag">ID: GHW002</span></td>
+                    <td>Rancho El Sol, Parcela 12</td>
+                    <td>800 m²</td>
+                    <td>2025-09-15</td>
+                    <td><span class="status-tag tag-maintenance">Mantenimiento</span></td>
+                    <td class="actions-col">
+                        <a href="/trazabilidad/detalle" class="action-link link-detail">Ver Detalle</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Invernadero Experimental Sur<br><span class="id-tag">ID: GHW003</span></td>
+                    <td>Campus de Investigación, Sector C</td>
+                    <td>1,200 m²</td>
+                    <td>2025-08-01</td>
+                    <td><span class="status-tag tag-inactive">Inactivo</span></td>
+                    <td class="actions-col">
+                        <a href="/trazabilidad/detalle" class="action-link link-detail">Ver Detalle</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination-container">
+        <span class="pagination-info">Mostrando 1 a 3 de 3 Invernaderos</span>
+        <div class="pagination-controls">
+            <button class="pagination-button disabled">Anterior</button>
+            <button class="pagination-button active">1</button>
+            <button class="pagination-button">Siguiente</button>
+        </div>
+    </div>
+</div>

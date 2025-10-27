@@ -1,0 +1,356 @@
+/* Variables (reutilizadas y añadidas para proveedor) */
+:root {
+    --color-primary-green: #38a169;
+    --color-secondary-green: #d1fae5;
+    --color-alert-red: #e53e3e;
+    --color-orange: #dd6b20; /* Nuevo para métricas de tiempo */
+    --color-blue-dark: #2c5282;
+    --color-gray-text: #4a5568;
+    --color-gray-light: #f7fafc;
+    --color-white: #ffffff;
+    --color-highlight-blue: #3182ce;
+    --color-border: #e2e8f0;
+    --color-card-blue: #ebf8ff; /* Fondo para tarjetas azules */
+    --color-card-green: #e6fffa; /* Fondo para tarjetas verdes */
+    --color-card-orange: #fffaf0; /* Fondo para tarjetas naranjas */
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE STYLES / MOBILE FIRST (<= 991px) */
+/* ------------------------------------------------------------------ */
+.main-container {
+    font-family: Arial, sans-serif;
+    max-width: 1300px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Botón Regresar al Listado */
+.back-to-list-button {
+    text-decoration: none;
+    color: var(--color-gray-text); 
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0 15px 0;
+    transition: color 0.2s;
+}
+
+.back-icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+.back-to-list-button:hover {
+    color: var(--color-highlight-blue);
+}
+
+/* Header Section */
+.page-header {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+    gap: 10px;
+}
+
+.header-title {
+    font-size: 1rem;
+    color: var(--color-gray-text);
+    margin: 0;
+    font-weight: normal;
+}
+
+.supplier-id-tag {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-highlight-blue);
+}
+
+.supplier-name-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-blue-dark);
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.action-button {
+    padding: 10px 15px;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.secondary-button {
+    background-color: var(--color-white);
+    color: var(--color-highlight-blue);
+    border-color: var(--color-highlight-blue);
+}
+
+.danger-button {
+    background-color: var(--color-alert-red);
+    color: var(--color-white);
+    border-color: var(--color-alert-red);
+}
+
+/* Detail Grid Layout (Mobile: Columnas apiladas) */
+.detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Paneles de Información */
+.info-panel {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+}
+
+.panel-header {
+    font-size: 1.1rem;
+    color: var(--color-blue-dark);
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-gray-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.count-tag {
+    font-size: 1rem;
+    color: var(--color-primary-green);
+}
+
+.contact-data p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: var(--color-gray-text);
+}
+
+/* Productos/Categorías */
+.product-list {
+    margin-bottom: 15px;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--color-border);
+    font-size: 0.9rem;
+}
+
+.prod-name {
+    color: var(--color-blue-dark);
+    font-weight: 600;
+}
+
+.prod-tag {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: var(--color-white);
+}
+.tag-high { background-color: var(--color-alert-red); }
+.tag-med { background-color: var(--color-orange); }
+.tag-low { background-color: var(--color-primary-green); }
+
+.detail-link {
+    color: var(--color-highlight-blue);
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Metrics Cards */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    padding: 20px 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid var(--color-border);
+}
+
+.card-blue { background-color: var(--color-card-blue); }
+.card-green { background-color: var(--color-card-green); }
+.card-red { background-color: #fff5f5; }
+.card-orange { background-color: var(--color-card-orange); } /* Nuevo color */
+
+.card-title {
+    font-size: 0.8rem;
+    color: var(--color-gray-text);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.card-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-blue-dark);
+}
+
+.highlight-green { color: var(--color-primary-green); }
+.highlight-red { color: var(--color-alert-red); }
+.highlight-orange { color: var(--color-orange); } /* Nuevo highlight */
+
+/* History Panel (Similar al anterior) */
+.history-panel {
+    background-color: var(--color-white);
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+}
+
+/* Tabs */
+.tabs-container {
+    display: flex;
+    border-bottom: 1px solid var(--color-border);
+    padding: 10px 20px 0 20px;
+    overflow-x: auto;
+}
+
+.tab-button {
+    /* Estilos de tab button omitidos por brevedad, asumiendo son los mismos */
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-gray-text);
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    margin-bottom: -1px;
+    white-space: nowrap;
+}
+
+.tab-button.active {
+    color: var(--color-primary-green);
+    font-weight: 600;
+    border-bottom: 3px solid var(--color-primary-green);
+}
+
+.tab-content {
+    padding: 20px;
+}
+
+/* History Table */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.history-table th, .history-table td {
+    padding: 10px 8px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-gray-light);
+    font-size: 0.85rem;
+}
+
+.order-tag {
+    font-weight: bold;
+    color: var(--color-blue-dark);
+    font-size: 0.85rem;
+}
+
+/* Tags de Estado de Orden */
+.status-tag {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: var(--color-white);
+    display: inline-block;
+}
+
+.tag-delivered { background-color: var(--color-primary-green); }
+.tag-pending { background-color: var(--color-orange); } 
+/* Otros estados se pueden añadir aquí */
+
+.table-footer {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERY: ESCRITORIO (>= 992px) */
+/* ------------------------------------------------------------------ */
+@media (min-width: 992px) {
+    .main-container {
+        padding: 30px;
+    }
+
+    .page-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .supplier-name-title {
+        flex-grow: 1;
+        margin-left: 20px;
+    }
+    
+    .header-actions {
+        margin-top: 0;
+    }
+    
+    .detail-grid {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    .left-column {
+        flex: 0 0 350px; 
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .right-column {
+        flex: 1;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}

@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="../../public/css/greenhouse_detail.css" />
+<div class="main-container">
+    
+    <a href="/trazabilidad/consulta" class="back-to-list-button" title="Regresar al Listado de Lotes">
+        ← Regresar a Lotes
+    </a>
+    
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">🌾</span>
+            <h1 class="header-title">Detalle de Trazabilidad: Lote 2025-CHI-04</h1>
+        </div>
+        <p class="header-subtitle">Información completa y actividades registradas para este ciclo de producción.</p>
+        
+        <div class="header-actions">
+             <button class="action-button secondary-button">
+                Ver QR Imprimible
+            </button>
+            <button class="action-button primary-button">
+                + Registrar Actividad
+            </button>
+        </div>
+    </header>
+
+    <h3 class="section-title">Información Clave del Lote</h3>
+    <div class="info-grid">
+        
+        <div class="info-card status-card">
+            <h4 class="card-title">Código de Lote (ID)</h4>
+            <p class="card-value large-value">PROD001-LOTE005</p>
+            <p class="card-label small-label">ID Único: 653e025b... (Para Base de Datos)</p>
+            
+            <div class="status-badge-container">
+                <span class="status-tag tag-active">ESTADO: ACTIVO</span>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <h4 class="card-title">Ubicación y Cultivo</h4>
+            <p class="card-value">Invernadero Central Alpha</p>
+            <p class="card-label">Referencia ID: GHW001 (Ver Invernadero)</p>
+            
+            <p class="card-value mt-10">Tomate Saladette (Ciclo: 90 días)</p>
+            <p class="card-label">Datos de Cultivo</p>
+        </div>
+
+        <div class="info-card">
+            <h4 class="card-title">Cronología de Producción</h4>
+            <p class="card-value">2025-09-01</p>
+            <p class="card-label">Fecha de Siembra</p>
+            
+            <p class="card-value mt-10 highlight-date">2025-11-30</p>
+            <p class="card-label">Cosecha Estimada</p>
+        </div>
+
+        <div class="info-card">
+            <h4 class="card-title">Rendimiento Registrado</h4>
+            <p class="card-value large-value text-red">N/A</p>
+            <p class="card-label">Rendimiento Total (Kg/Ton) al Cierre</p>
+            
+            <p class="card-note">El rendimiento final se registra al cambiar el estado a CERRADO.</p>
+        </div>
+
+    </div>
+
+    <h3 class="section-title mt-30">Historial Completo de Actividades (Trazabilidad)</h3>
+    <div class="activity-timeline">
+        
+        <div class="timeline-item">
+            <div class="timeline-icon tag-active">🌱</div>
+            <div class="timeline-content">
+                <h4 class="activity-title">Siembra Inicial del Cultivo</h4>
+                <p class="activity-meta">Fecha: 2025-09-01 08:30 | Usuario: Producer Lead</p>
+                <p class="activity-description">Registro de la siembra de la variedad 'Tomate Saladette' en la zona asignada del Invernadero Central Alpha.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-icon tag-primary-blue">🧪</div>
+            <div class="timeline-content">
+                <h4 class="activity-title">Aplicación de Fertilizante Base</h4>
+                <p class="activity-meta">Fecha: 2025-09-15 14:00 | Usuario: Técnico Agrónomo</p>
+                <p class="activity-description">Aplicación de NPK (20-20-20) por goteo. Proveedor: AgroQuímicos del Centro S.A. Cantidad: 15 Kg.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-icon tag-alert-red">⚠️</div>
+            <div class="timeline-content">
+                <h4 class="activity-title">Alerta Sanitaria: Detección de Plaga</h4>
+                <p class="activity-meta">Fecha: 2025-10-20 09:00 | Usuario: Auditor Principal</p>
+                <p class="activity-description">Se detectó presencia de mosca blanca. Se requieren acciones correctivas urgentes. El estado del lote se ha marcado como ALERTA.</p>
+            </div>
+        </div>
+
+        <div class="timeline-end">FIN DEL REGISTRO</div>
+    </div>
+</div>

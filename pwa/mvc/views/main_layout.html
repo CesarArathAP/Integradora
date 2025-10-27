@@ -3,24 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin</title>
+    <title>Trazabilidad PWA - Admin</title>
     <link rel="icon" type="image/png" href="../../public/icon-192x192.png" />
-    <link rel="stylesheet" href="../../public/css/styles.css" />
+    <link rel="stylesheet" href="../../public/css/styles.css" /> 
     <link rel="manifest" href="../../manifest.json" />
   </head>
+  
   <body>
-    <header>
-      <h2></h2>
-    </header>
+    <div class="app-layout-container">
+        
+        <aside class="sidebar mobile-closed">
+            <div class="sidebar-header">
+                <span class="logo">AGRI-TRACE</span>
+                <div class="user-info">
+                    <span class="admin-label">Administrador</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle">☰</button> 
+            </div>
 
-    <main>
-      {{ content }}
-    </main>
+            <nav class="sidebar-nav">
+                <h4 class="nav-title">Módulos Principales</h4>
+                <a href="/login/auth" class="nav-item active"><span class="nav-icon">🏠</span> Dashboard</a>
+                <a href="/trazabilidad/consulta" class="nav-item"><span class="nav-icon">🌾</span> Lotes y Trazabilidad</a>
+                <a href="/auditoria/datos" class="nav-item"><span class="nav-icon">⚠️</span> Auditoría</a>
+                <a href="/reportes/produccion" class="nav-item"><span class="nav-icon">📈</span> Reportes y Análisis</a>
 
-    <footer>
-      <p>&copy; 2025 Mi Aplicación</p>
-    </footer>
+                <h4 class="nav-title">Gestión de Recursos</h4>
+                <a href="/administracion/productores" class="nav-item"><span class="nav-icon">👩‍🌾</span> Productores</a>
+                <a href="/administracion/proveedores" class="nav-item"><span class="nav-icon">🚛</span> Proveedores</a>
+                <a href="/reportes/consumo" class="nav-item"><span class="nav-icon">🧪</span> Insumos</a>
+                <a href="/administracion/invernaderos" class="nav-item"><span class="nav-icon">🏗️</span> Invernaderos</a>
+
+                <h4 class="nav-title">Configuración</h4>
+                <a href="/administracion/configuracion" class="nav-item"><span class="nav-icon">⚙️</span> Settings</a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                 <a href="#logout" class="nav-item logout-btn"><span class="nav-icon">🚪</span> Cerrar Sesión</a>
+                 <p class="copyright">&copy; 2025 Mi Aplicación</p>
+            </div>
+        </aside>
+        <main class="main-content-wrapper">
+          {{ content }}
+        </main>
+        </div>
 
     <script src="../../public/js/app.js"></script>
+    <script src="../../public/js/menu.js"></script>
   </body>
 </html>

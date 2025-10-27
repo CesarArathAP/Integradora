@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="../../public/css/supplier_list.css" />
+
+<div class="main-container">
+    <a href="/login/auth" class="back-to-home-button" title="Regresar a la página principal">
+        <span class="back-icon">←</span> Regresar al Inicio
+    </a>
+    
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">🚛</span>
+            <h1 class="header-title">Listado de Proveedores de Insumos</h1>
+            <p class="header-subtitle">Gestión de empresas y contactos para la adquisición de fertilizantes, semillas y materiales.</p>
+        </div>
+    </header>
+
+    <div class="filters-actions-container">
+        <input type="text" placeholder="Buscar por Empresa, Contacto o RUC/RFC..." class="filter-input"/>
+        
+        <select class="filter-select">
+            <option value="activo">Estado: Activo</option>
+            <option value="inactivo">Estado: Inactivo</option>
+            <option value="todos">Estado: Todos</option>
+        </select>
+        
+        <a href="/administracion/proveedores/nuevo" class="action-button primary-button large-button">
+            + Nuevo Proveedor
+        </a>
+    </div>
+
+    <div class="list-panel">
+        <h2 class="list-title">Empresas Registradas <span class="total-count">(Total: 5)</span></h2>
+        
+        <div class="table-container">
+            <table class="suppliers-table">
+                <thead>
+                    <tr>
+                        <th>EMPRESA / ID</th>
+                        <th>CONTACTO PRINCIPAL</th>
+                        <th>PRODUCTOS (INVENTARIO)</th>
+                        <th>TELÉFONO</th>
+                        <th>ESTADO</th>
+                        <th class="actions-col">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong class="supplier-name">AgroQuímicos del Centro S.A.</strong>
+                            <span class="supplier-id">ID: SP001</span>
+                        </td>
+                        <td>
+                            <span class="contact-name">Lic. Roberto Díaz</span>
+                            <span class="contact-email">rdiaz@agroq.mx</span>
+                        </td>
+                        <td>Fertilizantes</td>
+                        <td>(442) 111 2233</td>
+                        <td><span class="status-tag tag-active">Activo</span></td>
+                        <td class="actions-col">
+                            <a href="/administracion/proveedores/detalle" class="action-link link-detail">Ver Detalle</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong class="supplier-name">Semillas y Agroservicios del Sur</strong>
+                            <span class="supplier-id">ID: SP002</span>
+                        </td>
+                        <td>
+                            <span class="contact-name">Ing. Laura Soto</span>
+                            <span class="contact-email">laura.soto@sas.com</span>
+                        </td>
+                        <td>Semillas, Pesticidas</td>
+                        <td>(55) 9988 7766</td>
+                        <td><span class="status-tag tag-active">Activo</span></td>
+                        <td class="actions-col">
+                            <a href="/administracion/proveedores/detalle" class="action-link link-detail">Ver Detalle</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong class="supplier-name">Materiales de Invernadero MX</strong>
+                            <span class="supplier-id">ID: SP005</span>
+                        </td>
+                        <td>
+                            <span class="contact-name">Sra. Elena Guzmán</span>
+                            <span class="contact-email">eguzman@matinv.com</span>
+                        </td>
+                        <td>Plásticos, Riego</td>
+                        <td>(33) 4455 6677</td>
+                        <td><span class="status-tag tag-inactive">Inactivo</span></td>
+                        <td class="actions-col">
+                            <a href="/administracion/proveedores/detalle" class="action-link link-detail">Ver Detalle</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="pagination-container">
+            <span class="pagination-info">Mostrando 1 a 10 de 15 Proveedores</span>
+            <div class="pagination-controls">
+                <button class="pagination-button disabled">Anterior</button>
+                <button class="pagination-button active">1</button>
+                <button class="pagination-button">2</button>
+                <button class="pagination-button">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>

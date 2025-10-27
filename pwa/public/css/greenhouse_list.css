@@ -1,0 +1,336 @@
+/* Variables (usamos las mismas que ya definiste) */
+:root {
+    --color-primary-green: #38a169;
+    --color-secondary-green: #d1fae5;
+    --color-alert-red: #e53e3e;
+    --color-orange: #dd6b20;
+    --color-blue-dark: #2c5282;
+    --color-gray-text: #4a5568;
+    --color-gray-light: #f7fafc;
+    --color-white: #ffffff;
+    --color-highlight-blue: #3182ce;
+    --color-border: #e2e8f0;
+
+    /* Colores específicos para tags de estado */
+    --color-tag-active: #38a169;    /* Verde */
+    --color-tag-inactive: #a0aec0;  /* Gris */
+    --color-tag-maintenance: #ecc94b; /* Amarillo/Naranja */
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE STYLES / MOBILE FIRST (<= 767px) */
+/* ------------------------------------------------------------------ */
+
+.main-container {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* ⭐️ ESTILOS PARA EL BOTÓN DE REGRESO AL INICIO */
+.back-to-home-button {
+    text-decoration: none;
+    color: var(--color-gray-text); 
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0 15px 0; /* Espacio para separarlo del header */
+    transition: color 0.2s;
+}
+
+.back-to-home-button:hover {
+    color: var(--color-highlight-blue);
+}
+
+.back-icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+/* FIN ESTILOS BOTÓN DE REGRESO */
+
+/* Header Section */
+.page-header {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-icon {
+    font-size: 2rem;
+    color: var(--color-primary-green);
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-blue-dark);
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    margin: 0;
+}
+
+.action-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.primary-button {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+}
+
+.primary-button:hover {
+    background-color: #2f855a;
+}
+
+/* Filters Section */
+.filters-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-input {
+    padding: 10px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    min-width: 100%; /* Ocupa todo el ancho en móvil */
+}
+
+/* Table Section */
+.section-title {
+    font-size: 1rem;
+    color: var(--color-blue-dark);
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.table-container {
+    overflow-x: auto; /* Permite scroll horizontal en móvil */
+    width: 100%;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* Ancho mínimo para legibilidad */
+}
+
+.data-table th, .data-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9rem;
+}
+
+.data-table th {
+    background-color: var(--color-gray-light);
+    color: var(--color-gray-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f7fafc;
+}
+
+.id-tag {
+    font-size: 0.75rem;
+    color: var(--color-gray-text);
+    display: block;
+    margin-top: 2px;
+}
+
+/* Status Tags */
+.status-tag {
+    padding: 4px 10px;
+    border-radius: 9999px; /* Pill shape */
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: var(--color-white);
+    display: inline-block;
+    text-align: center;
+}
+
+.tag-active { background-color: var(--color-tag-active); }
+.tag-inactive { background-color: var(--color-tag-inactive); }
+.tag-maintenance { background-color: var(--color-tag-maintenance); color: var(--color-blue-dark); } /* Texto oscuro para tag claro */
+
+
+/* Actions Column */
+.actions-col {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.action-link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.link-detail { 
+    color: var(--color-highlight-blue); 
+    padding: 6px 0; /* Espacio para el click */
+}
+.link-detail:hover { color: #2b6cb0; }
+
+
+/* Pagination */
+.pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.pagination-info {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination-button {
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    color: var(--color-gray-text);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.pagination-button.active {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    border-color: var(--color-primary-green);
+}
+
+.pagination-button:hover:not(.active):not(.disabled) {
+    background-color: var(--color-gray-light);
+}
+
+.pagination-button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERY: TABLET Y ESCRITORIO (>= 768px) */
+/* ------------------------------------------------------------------ */
+@media (min-width: 768px) {
+    .main-container {
+        padding: 30px;
+    }
+    
+    /* ⭐️ Ajuste para el botón de regreso en desktop */
+    .back-to-home-button {
+        padding: 0 0 20px 0; 
+    }
+
+    /* Header Horizontal Layout */
+    .page-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start; /* Alineación superior para mejor estética */
+    }
+
+    .header-content {
+        flex-direction: column;
+        flex-grow: 1;
+        margin: 0 20px;
+    }
+
+    .header-info {
+        margin-top: 0;
+    }
+
+    .header-title {
+        font-size: 2.2rem;
+    }
+
+    .header-subtitle {
+        margin-left: 55px; /* Alineación con el texto del título */
+    }
+
+    .action-button {
+        align-self: flex-start;
+        padding: 12px 20px;
+    }
+
+    /* Filters: Se alinean horizontalmente */
+    .filters-container {
+        flex-direction: row;
+        gap: 15px;
+    }
+    
+    .filter-input {
+        min-width: 300px;
+    }
+    
+    .filter-select {
+        min-width: 180px;
+        max-width: 200px;
+    }
+
+    /* Table adjustments */
+    .data-table th, .data-table td {
+        padding: 15px 10px;
+    }
+
+    /* Pagination Horizontal */
+    .pagination-container {
+        flex-direction: row;
+        padding: 15px 10px 0 10px;
+    }
+}

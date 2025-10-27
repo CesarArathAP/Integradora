@@ -1,0 +1,253 @@
+/* Variables (Globales) */
+:root {
+    --color-primary-green: #38a169;
+    --color-red-alert: #d32f2f;
+    --color-blue-dark: #2c5282;
+    --color-gray-text: #4a5568;
+    --color-gray-light: #f7fafc;
+    --color-white: #ffffff;
+    --color-highlight-blue: #3182ce;
+    --color-border: #e2e8f0;
+    --color-background-page: #edf2f7;
+    /* Dimensiones */
+    --sidebar-width: 250px;
+    --sidebar-bg: #2c3e50; /* Azul oscuro/gris para el sidebar */
+    --sidebar-link-hover: #3b5a8d;
+}
+
+/* Base Global */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background-page);
+    font-family: Arial, sans-serif;
+    color: var(--color-gray-text);
+}
+
+/* ------------------------------------------------------------------ */
+/* Layout de la Aplicación (Menú + Contenido) */
+/* ------------------------------------------------------------------ */
+
+.app-layout-container {
+    display: flex;
+    flex-direction: column; /* Apilado en móvil */
+    min-height: 100vh;
+}
+
+/* === Sidebar (Menú Lateral) === */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    color: var(--color-white);
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    z-index: 1000;
+    /* ⭐️ Transición para el efecto de despliegue (Smooth toggle) */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    overflow: hidden; /* Oculta el contenido extra */
+    
+    /* Estado base: Solo el header visible en móvil */
+    max-height: 55px; /* Altura inicial del header */
+    padding-bottom: 0; /* Elimina padding inferior cuando está cerrado */
+}
+
+/* ⭐️ Estado CERRADO en móvil (Mantiene la altura del header) */
+.sidebar.mobile-closed {
+    max-height: 55px; 
+    padding-bottom: 0;
+}
+
+/* ⭐️ Estado ABIERTO en móvil (Despliega la altura) */
+.sidebar.mobile-open {
+    max-height: 90vh; /* Se despliega hasta un máximo, permitiendo scroll si es largo */
+    padding-bottom: 15px; 
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* ⭐️ Botón de Menú (Solo visible en móvil) */
+.menu-toggle {
+    display: block; 
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-primary-green);
+}
+
+.user-info {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #90cdf4;
+}
+
+.username {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.sidebar-nav {
+    display: block; 
+}
+
+/* ⭐️ Ocultar nav y footer en estado cerrado (mobile-closed) */
+.mobile-closed .sidebar-nav,
+.mobile-closed .sidebar-footer {
+    display: none;
+}
+
+/* ⭐️ Mostrar nav y footer en estado abierto (mobile-open) */
+.mobile-open .sidebar-nav,
+.mobile-open .sidebar-footer {
+    display: block;
+}
+
+.sidebar-footer {
+    display: block; 
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    margin-top: 10px;
+}
+
+.copyright {
+    display: none; /* Oculto en móvil */
+}
+
+/* Items de Navegación */
+.nav-title {
+    display: block; 
+    font-size: 0.75rem;
+    color: #90cdf4;
+    margin: 15px 0 5px 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: var(--color-gray-light);
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.nav-icon {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.nav-item.active {
+    background-color: var(--sidebar-link-hover);
+    border-radius: 4px;
+    color: var(--color-white);
+}
+
+.logout-btn {
+    background-color: #3b5a8d; 
+    color: var(--color-white);
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+/* === Contenido Principal === */
+.main-content-wrapper {
+    flex-grow: 1;
+    padding: 20px 15px; 
+    background-color: var(--color-background-page);
+}
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERY: DESKTOP (>= 992px) */
+/* ------------------------------------------------------------------ */
+@media (min-width: 992px) {
+    .app-layout-container {
+        flex-direction: row; /* Layout de dos columnas */
+    }
+
+    /* Sidebar - Estilos de Escritorio (Fijo) */
+    .sidebar {
+        /* ⭐️ Restablecer y anular clases móviles con !important si es necesario */
+        max-height: 100vh !important; 
+        padding-bottom: 20px;
+        position: sticky; 
+        
+        width: var(--sidebar-width);
+        min-width: var(--sidebar-width);
+        flex-shrink: 0;
+        top: 0;
+        padding: 20px 15px;
+        box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* ⭐️ Ocultar botón de menú en desktop */
+    .menu-toggle {
+        display: none !important; 
+    }
+    
+    /* ⭐️ Asegurar que la barra lateral y sus contenidos se muestren siempre */
+    .sidebar.mobile-closed, 
+    .sidebar.mobile-open {
+        max-height: 100vh !important;
+        padding-bottom: 20px;
+    }
+
+    .sidebar-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        border-bottom: none; 
+    }
+    
+    .user-info {
+        margin-top: 10px;
+        text-align: left;
+    }
+    
+    .sidebar-nav,
+    .sidebar-footer,
+    .nav-title,
+    .copyright {
+        display: block !important; 
+    }
+    
+    .sidebar-footer {
+        position: static; 
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .copyright {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    /* Contenido Principal */
+    .main-content-wrapper {
+        padding: 30px;
+    }
+}

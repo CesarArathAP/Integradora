@@ -14,6 +14,13 @@ const { SuppliesReportsController } = require("./mvc/controllers/SuppliesReports
 const { MasterDataController } = require("./mvc/controllers/MasterDataController");
 const { ProducerListController } = require("./mvc/controllers/ProducerListController");
 const { ProducerDetailController } = require("./mvc/controllers/ProducerDetailController");
+const { SupplierListController } = require("./mvc/controllers/SupplierListController");
+const { GreenhouseListController } = require("./mvc/controllers/GreenhouseListController");
+const { GreenhouseDetailController } = require("./mvc/controllers/GreenhouseDetailController");
+const { GreenhouseRegisterController } = require("./mvc/controllers/GreenhouseRegisterController");
+const { SupplierDetailController } = require("./mvc/controllers/SupplierDetailController");
+const { SupplierRegisterController } = require("./mvc/controllers/SupplierRegisterController");
+const { ProducerRegisterController } = require("./mvc/controllers/ProducerRegisterController");
 
 const app = express();
 const PORT = 3000;
@@ -32,7 +39,7 @@ app.post("/login/auth", (req, res) => {
     AuthController.handleLogin(req, res);
 });
 
-app.get("/login/auth/consulta", (req, res) => {
+app.get("/trazabilidad/consulta", (req, res) => {
     ViewConsultController.renderVista(res, "Administrador");
 });
 
@@ -69,7 +76,35 @@ app.get("/administracion/productores", (req, res) => {
 });
 
 app.get("/administracion/productor/detalle", (req, res) => {
-    ProducerDetailController.renderVista(res); // Aquí llamas al controlador
+    ProducerDetailController.renderVista(res);
+});
+
+app.get("/administracion/proveedores", (req, res) => {
+    SupplierListController.renderVista(res);
+});
+
+app.get("/administracion/invernaderos", (req, res) => {
+    GreenhouseListController.renderVista(req, res);
+});
+
+app.get("/trazabilidad/detalle", (req, res) => {
+    GreenhouseDetailController.renderVista(req, res);
+});
+
+app.get("/administracion/invernaderos/nuevo", (req, res) => {
+    GreenhouseRegisterController.renderVista(req, res);
+});
+
+app.get("/administracion/proveedores/detalle", (req, res) => {
+    SupplierDetailController.renderVista(req, res);
+});
+
+app.get("/administracion/proveedores/nuevo", (req, res) => {
+    SupplierRegisterController.renderVista(req, res);
+});
+
+app.get("/administracion/productores/nuevo", (req, res) => {
+    ProducerRegisterController.renderVista(req, res);
 });
 
 // Fallback

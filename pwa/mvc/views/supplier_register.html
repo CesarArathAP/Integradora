@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="../../public/css/supplier_register.css" />
+<div class="main-container">
+    
+    <a href="/administracion/proveedores" class="back-to-list-button" title="Regresar al Listado de Proveedores">
+        ← Regresar a Proveedores
+    </a>
+    
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">📝</span>
+            <h1 class="header-title">Registrar Nuevo Proveedor</h1>
+        </div>
+        <p class="header-subtitle">Completa los siguientes campos para dar de alta un nuevo socio proveedor en el sistema.</p>
+    </header>
+
+    <form class="registration-form" onsubmit="alert('Simulación: Proveedor Registrado'); return false;">
+        
+        <div class="form-card">
+            <h3 class="card-section-title">Información de Contacto y Legal</h3>
+            
+            <div class="input-group">
+                <label for="razon_social">Razón Social / Nombre Comercial (*)</label>
+                <input type="text" id="razon_social" name="razon_social" placeholder="Ej: AgroQuímicos del Centro S.A. de C.V." required>
+            </div>
+
+            <div class="input-group">
+                <label for="rfc">RFC / ID Fiscal (*)</label>
+                <input type="text" id="rfc" name="rfc" placeholder="Ej: AGC010101XYZ" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="contacto">Contacto Principal</label>
+                <input type="text" id="contacto" name="contacto" placeholder="Ej: Ing. Javier Soto">
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email (*)</label>
+                <input type="email" id="email" name="email" placeholder="contacto@ejemplo.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 55 1234 5678">
+            </div>
+        </div>
+        
+        <div class="form-card">
+            <h3 class="card-section-title">Servicio y Categorías Suministradas</h3>
+            
+            <div class="input-group">
+                <label for="categorias">Categorías de Productos (Selección Múltiple)</label>
+                <select id="categorias" name="categorias" multiple size="4">
+                    <option value="Fertilizantes">Fertilizantes y Nutrientes</option>
+                    <option value="Semillas">Semillas y Material Genético</option>
+                    <option value="Fitosanitarios">Fitosanitarios y Pesticidas</option>
+                    <option value="Equipamiento">Equipamiento y Maquinaria</option>
+                    <option value="Servicios">Servicios de Asesoría</option>
+                </select>
+                <small class="help-text">Mantén Ctrl (Cmd) presionado para seleccionar múltiples opciones.</small>
+            </div>
+            
+            <div class="input-group">
+                <label for="region_servicio">Región de Servicio</label>
+                <input type="text" id="region_servicio" name="region_servicio" placeholder="Ej: Bajío, Centro y Occidente de México">
+            </div>
+
+            <div class="input-group">
+                <label for="fecha_alta">Fecha de Alta en el Sistema</label>
+                <input type="date" id="fecha_alta" name="fecha_alta" value="2025-10-27" required>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="action-button primary-button large-button">
+                Registrar Proveedor
+            </button>
+            <button type="reset" class="action-button secondary-button large-button">
+                Limpiar Formulario
+            </button>
+        </div>
+    </form>
+</div>

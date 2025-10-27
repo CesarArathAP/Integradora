@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="../../public/css/supplier_detail.css" />
+
+<div class="main-container">
+    <a href="/administracion/proveedores" class="back-to-list-button" title="Regresar al Listado de Proveedores">
+        <span class="back-icon">←</span> Regresar al Listado
+    </a>
+    
+    <header class="page-header">
+        <h1 class="header-title">Detalle de Proveedor: <span class="supplier-id-tag">SUP/015</span></h1>
+        <h2 class="supplier-name-title">AgroQuímicos del Centro S.A. de C.V.</h2>
+        
+        <div class="header-actions">
+            <!-- <button class="action-button secondary-button">
+                <span class="action-icon">📝</span> Editar Perfil
+            </button> -->
+            <button class="action-button danger-button">
+                <span class="action-icon">❌</span> Suspender Proveedor
+            </button>
+        </div>
+    </header>
+
+    <div class="detail-grid">
+        
+        <div class="left-column">
+            
+            <div class="info-panel contact-info-panel">
+                <h3 class="panel-header">Información de Identificación</h3>
+                <div class="contact-data">
+                    <p><strong>Razón Social/Nombre:</strong> AgroQuímicos del Centro S.A. de C.V.</p>
+                    <p><strong>RFC (Identificador Fiscal):</strong> AGC010101XYZ</p>
+                    <p><strong>Contacto Principal:</strong> Ing. Javier Soto</p>
+                    <p><strong>Teléfono:</strong> 33 5555 9988</p>
+                </div>
+            </div>
+
+            <div class="info-panel products-panel">
+                <h3 class="panel-header">Tipos de Insumos que Provee</h3>
+                
+                <div class="product-list">
+                    <div class="product-item">
+                        <span class="prod-name">Fertilizantes</span>
+                        <span class="prod-tag tag-high">Químicos</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="prod-name">Semillas</span>
+                        <span class="prod-tag tag-med">Biológicos</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="prod-name">Plaguicidas</span>
+                        <span class="prod-tag tag-high">Control</span>
+                    </div>
+                </div>
+                
+                <p class="detail-link" style="color:#718096; margin-top:15px;">Listado de productos disponibles en Catálogo</p>
+            </div>
+            
+        </div>
+        
+        <div class="right-column">
+            
+            <div class="metrics-grid">
+                
+                <div class="metric-card card-blue">
+                    <h4 class="card-title">Lotes Atendidos (Total)</h4>
+                    <span class="card-value">124</span>
+                </div>
+
+                <div class="metric-card card-green">
+                    <h4 class="card-title">Insumos Suministrados (ítems)</h4>
+                    <span class="card-value highlight-green">89</span>
+                </div>
+
+                <div class="metric-card card-orange">
+                    <h4 class="card-title">Incidencias (Auditoría)</h4>
+                    <span class="card-value highlight-orange">2</span>
+                </div>
+
+                <div class="metric-card card-red">
+                    <h4 class="card-title">Estado de Cuenta</h4>
+                    <span class="card-value">ACTIVO</span>
+                </div>
+
+            </div>
+            
+            <div class="history-panel">
+                
+                <div class="tabs-container">
+                    <button class="tab-button active">Historial de Consumo por Lote (Reciente)</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="table-container">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>FECHA USO</th>
+                                    <th>LOTE ID</th>
+                                    <th>INSUMO APLICADO</th>
+                                    <th>CANTIDAD</th>
+                                    <!-- <th>EVIDENCIA</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-09-15</td>
+                                    <td><span class="order-tag">LOTE-4532-CHL</span></td>
+                                    <td>Fertilizante NPK 20-20-20</td>
+                                    <td><span class="highlight-green">50 Kg</span></td>
+                                    <!-- <td><a href="#" class="action-link link-trace">Ver Fotos (2)</a></td> -->
+                                </tr>
+                                <tr>
+                                    <td>2025-09-01</td>
+                                    <td><span class="order-tag">LOTE-7890-TOM</span></td>
+                                    <td>Plaguicida Orgánico BIO-1</td>
+                                    <td><span class="highlight-orange">5 Litros</span></td>
+                                    <!-- <td><a href="#" class="action-link link-trace">Ver Fotos (1)</a></td> -->
+                                </tr>
+                                <tr>
+                                    <td>2025-08-20</td>
+                                    <td><span class="order-tag">LOTE-5000-PEE</span></td>
+                                    <td>Semilla Tomate Saladette</td>
+                                    <td><span class="highlight-green">1000 Unidades</span></td>
+                                    <!-- <td><a href="#" class="action-link link-trace">Ver Fotos (3)</a></td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="table-footer">Datos extraídos de los registros de aplicación de insumos en los lotes.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

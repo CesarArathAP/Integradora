@@ -1,0 +1,285 @@
+/* Variables (Alineación con styles.css) */
+:root {
+    --color-primary-green: #38a169;
+    --color-blue-dark: #2c5282;
+    --color-gray-text: #4a5568;
+    --color-gray-light: #f7fafc;
+    --color-white: #ffffff;
+    --color-highlight-blue: #3182ce;
+    --color-border: #e2e8f0;
+    --color-alert-red: #e53e3e;
+    --color-secondary-blue: #63b3ed; /* Para tags de insumos */
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE STYLES / MOBILE FIRST */
+/* ------------------------------------------------------------------ */
+
+.main-container {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Botón de Regreso */
+.back-to-list-button {
+    text-decoration: none;
+    color: var(--color-gray-text); 
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: block;
+    padding: 0 0 15px 0;
+    transition: color 0.2s;
+}
+
+.back-to-list-button:hover {
+    color: var(--color-highlight-blue);
+}
+
+/* Header Section */
+.page-header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-icon {
+    font-size: 2rem;
+    color: var(--color-primary-green);
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-blue-dark);
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    margin: 10px 0 15px 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.primary-button {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+}
+.secondary-button {
+    background-color: var(--color-highlight-blue);
+    color: var(--color-white);
+}
+
+/* Info Grid (Tarjetas de Datos) */
+.section-title {
+    font-size: 1.2rem;
+    color: var(--color-blue-dark);
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.mt-30 { margin-top: 30px; }
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    background-color: var(--color-gray-light);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-primary-green);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.info-card.status-card {
+    border-left: 5px solid var(--color-blue-dark);
+}
+
+.card-title {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.card-value {
+    font-size: 1.1rem;
+    color: var(--color-blue-dark);
+    font-weight: 600;
+    margin: 0;
+}
+
+.large-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.card-label {
+    font-size: 0.75rem;
+    color: #718096;
+    margin-bottom: 5px;
+}
+
+.small-label {
+    font-size: 0.65rem;
+}
+
+.mt-10 { margin-top: 10px; }
+.text-red { color: var(--color-alert-red); }
+.highlight-date { color: var(--color-primary-green); font-weight: bold; }
+
+.status-badge-container {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid var(--color-border);
+}
+
+.status-tag {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--color-white);
+    background-color: var(--color-primary-green);
+}
+
+/* ------------------------------------------------------------------ */
+/* HISTORIAL DE ACTIVIDADES (TIMELINE) */
+/* ------------------------------------------------------------------ */
+
+.activity-timeline {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 20px;
+    border-left: 2px solid var(--color-border); /* Línea vertical */
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 30px;
+    padding-left: 30px;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -17px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    border: 3px solid var(--color-primary-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 0 0 3px var(--color-white); /* Para destacar el icono */
+}
+
+/* Colores para los iconos de la línea de tiempo */
+.timeline-icon.tag-alert-red { border-color: var(--color-alert-red); color: var(--color-alert-red); }
+.timeline-icon.tag-active { border-color: var(--color-primary-green); color: var(--color-primary-green); }
+.timeline-icon.tag-primary-blue { border-color: var(--color-highlight-blue); color: var(--color-highlight-blue); }
+
+
+.activity-title {
+    font-size: 1rem;
+    color: var(--color-blue-dark);
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.activity-meta {
+    font-size: 0.75rem;
+    color: #718096;
+    margin-bottom: 10px;
+}
+
+.activity-description {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    margin: 0;
+    padding: 10px;
+    background-color: var(--color-gray-light);
+    border-radius: 4px;
+}
+
+.timeline-end {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 20px;
+}
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERY: DESKTOP (>= 768px) */
+/* ------------------------------------------------------------------ */
+@media (min-width: 768px) {
+    .main-container {
+        padding: 30px;
+    }
+    
+    /* Header Horizontal Layout */
+    .page-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-info {
+        flex-grow: 1;
+        align-items: center;
+    }
+    
+    .header-title {
+        font-size: 2.2rem;
+    }
+
+    .header-subtitle {
+        margin: 0;
+        margin-left: 75px; /* Alineación con el texto del título */
+        align-self: flex-start;
+        font-size: 1rem;
+    }
+
+    .header-actions {
+        flex-shrink: 0;
+    }
+
+    /* Timeline ajustes */
+    .activity-timeline {
+        padding-left: 40px;
+    }
+}

@@ -1,0 +1,325 @@
+/* Variables (reutilizadas) */
+:root {
+    --color-primary-green: #38a169;
+    --color-secondary-green: #d1fae5;
+    --color-alert-red: #e53e3e;
+    --color-blue-dark: #2c5282;
+    --color-gray-text: #4a5568;
+    --color-gray-light: #f7fafc;
+    --color-white: #ffffff;
+    --color-highlight-blue: #3182ce;
+    --color-border: #e2e8f0;
+    --color-background-page: #edf2f7;
+    /* Colores específicos para tags de estado */
+    --color-tag-active: var(--color-primary-green);
+    --color-tag-inactive: #a0aec0; /* Gris para Inactivo */
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE STYLES / MOBILE FIRST (<= 767px) */
+/* ------------------------------------------------------------------ */
+.main-container {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Botón Regresar al Inicio (Consistencia) */
+.back-to-home-button {
+    text-decoration: none;
+    color: var(--color-gray-text); 
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0 15px 0;
+    transition: color 0.2s;
+}
+
+.back-icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+.back-to-home-button:hover {
+    color: var(--color-highlight-blue);
+}
+
+/* Header Section */
+.page-header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header-icon {
+    font-size: 1.5rem;
+    color: var(--color-highlight-blue); /* Usamos azul para este módulo */
+    margin-bottom: 5px;
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-blue-dark);
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    margin: 0;
+}
+
+/* Filters & Actions Section */
+.filters-actions-container {
+    display: flex;
+    flex-direction: column; /* Apilado en móvil */
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-input, .filter-select {
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.action-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-align: center;
+    width: 100%;
+}
+
+.primary-button {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+}
+
+.primary-button:hover {
+    background-color: #2f855a;
+}
+
+/* List Panel */
+.list-panel {
+    padding: 10px;
+}
+
+.list-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-blue-dark);
+    margin: 0 0 15px 0;
+}
+
+.total-count {
+    font-size: 1rem;
+    color: var(--color-primary-green);
+}
+
+/* Table Section */
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background-color: var(--color-white);
+}
+
+.suppliers-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px; /* Ancho mínimo para legibilidad */
+}
+
+.suppliers-table th, .suppliers-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9rem;
+}
+
+.suppliers-table th {
+    background-color: var(--color-gray-light);
+    color: var(--color-gray-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.suppliers-table tbody tr:hover {
+    background-color: #f7fafc;
+}
+
+/* Campos específicos de la tabla */
+.supplier-name {
+    display: block;
+    color: var(--color-blue-dark);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.supplier-id {
+    display: block;
+    font-size: 0.8rem;
+    color: #718096;
+}
+
+.contact-name, .contact-email {
+    display: block;
+    font-size: 0.9rem;
+}
+
+/* Tags de Estado */
+.status-tag {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: var(--color-white);
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+}
+
+.tag-active { background-color: var(--color-tag-active); }
+.tag-inactive { background-color: var(--color-tag-inactive); }
+
+
+/* Acciones */
+.actions-col {
+    white-space: nowrap;
+    text-align: center;
+    width: 100px;
+}
+
+.link-detail {
+    color: var(--color-highlight-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.link-detail:hover {
+    text-decoration: underline;
+}
+
+/* Paginacion */
+.pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.pagination-info {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination-button {
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    color: var(--color-gray-text);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.pagination-button.active {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    border-color: var(--color-primary-green);
+}
+
+.pagination-button:hover:not(.active):not(.disabled) {
+    background-color: var(--color-gray-light);
+}
+
+.pagination-button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERY: TABLET Y ESCRITORIO (>= 768px) */
+/* ------------------------------------------------------------------ */
+@media (min-width: 768px) {
+    .main-container {
+        padding: 30px;
+    }
+    
+    /* Header Horizontal Layout */
+    .page-header {
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .header-info {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .header-icon {
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+
+    /* Filters & Actions Horizontal */
+    .filters-actions-container {
+        flex-direction: row;
+        gap: 15px;
+        justify-content: space-between;
+    }
+    
+    .filter-input {
+        flex-grow: 1.5; 
+        min-width: 250px;
+    }
+    
+    .filter-select {
+        flex-grow: 1;
+        max-width: 180px;
+    }
+    
+    .large-button {
+        flex-grow: 0;
+        width: auto;
+    }
+    
+    /* Pagination Horizontal */
+    .pagination-container {
+        flex-direction: row;
+        padding: 15px 10px 0 10px;
+    }
+
+    .back-to-home-button {
+        padding: 0 0 20px 0;
+    }
+}
