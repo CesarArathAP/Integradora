@@ -1,0 +1,161 @@
+<link rel="stylesheet" href="../../public/css/supplies_reports.css" />
+
+<div class="main-container">
+    <a href="/login/auth" class="back-to-home-button" title="Regresar a la página principal">
+        <span class="back-icon">←</span> Regresar al Inicio
+    </a>
+
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">🧪</span>
+            <h1 class="header-title">Reportes de Consumo de Insumos</h1>
+            <p class="header-subtitle">Análisis detallado del consumo de materiales por productor y periodo.</p>
+        </div>
+        <a href="#" class="action-button primary-button">
+            &#x2913; Exportar a PDF
+        </a>
+    </header>
+
+    <div class="filters-container">
+        <h2 class="filter-header">Seleccione Insumo para Analizar</h2>
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label class="filter-label">Insumo Específico</label>
+                <select class="filter-select">
+                    <option value="f101">Fertilizante Triple 17 (F-101)</option>
+                    <option value="p202">Pesticida Preventivo (P-202)</option>
+                    <option value="h303">Hormona de Enraizamiento (H-303)</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label class="filter-label">Productor / Agricultor</label>
+                <select class="filter-select">
+                    <option value="all">Todos los Productores</option>
+                    <option value="p001">Juan Pérez (P001)</option>
+                    <option value="p005">María Sánchez (P005)</option>
+                    <option value="p009">Carlos López (P009)</option>
+                </select>
+            </div>
+
+            <div class="filter-group date-range">
+                <label class="filter-label">Fecha Inicial</label>
+                <input type="date" value="2025-10-23" class="date-input"/>
+            </div>
+            
+            <div class="filter-group date-range">
+                <label class="filter-label">Fecha Final</label>
+                <input type="date" value="2025-10-25" class="date-input"/>
+            </div>
+            
+            <button class="action-button primary-button">
+                Aplicar Filtros
+            </button>
+        </div>
+    </div>
+
+    <div class="metrics-grid top-metrics">
+        <div class="metric-card card-primary">
+            <h3 class="card-title">Consumo Total (Fertilizante Triple 17)</h3>
+            <span class="card-value large-value primary-value">1,850 <span class="unit">kg</span></span>
+            <span class="card-subtitle">En el periodo seleccionado</span>
+        </div>
+
+        <div class="metric-card card-secondary">
+            <h3 class="card-title">Existencia Actual en Almacén</h3>
+            <span class="card-value secondary-value">450 <span class="unit">kg</span></span>
+            <span class="card-subtitle">Nivel de Reorden sugerido: 500 kg</span>
+        </div>
+
+        <div class="metric-card card-alert">
+            <h3 class="card-title">Consumo Promedio por Lote</h3>
+            <span class="card-value alert-value">18.5 <span class="unit">kg</span></span>
+            <span class="card-subtitle">kg/lote (útil para **benchmarking**)</span>
+        </div>
+    </div>
+
+    <div class="bottom-sections">
+        <div class="chart-panel panel-left">
+            <h2>Consumo Acumulado por Productor</h2>
+            <p class="panel-subtitle">Compara qué agricultores son los mayores consumidores del insumo.</p>
+            
+            <div class="bar-chart-container">
+                <div class="bar-item">
+                    <span class="bar-label">Juan Pérez (P001) <strong class="bar-value">950 kg</strong></span>
+                    <div class="progress-bar bar-red" style="width: 70%;"></div>
+                </div>
+
+                <div class="bar-item">
+                    <span class="bar-label">María Sánchez (P005) <strong class="bar-value">500 kg</strong></span>
+                    <div class="progress-bar bar-orange" style="width: 40%;"></div>
+                </div>
+
+                <div class="bar-item">
+                    <span class="bar-label">Carlos López (P009) <strong class="bar-value">400 kg</strong></span>
+                    <div class="progress-bar bar-green" style="width: 30%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-panel panel-right">
+            <h2>Desglose de Consumo (Lotes Recientes)</h2>
+            <p class="panel-subtitle">Detalle de las aplicaciones del **Fertilizante Triple 17** en el último mes.</p>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>LOTE ID</th>
+                            <th>PRODUCTOR</th>
+                            <th>CANTIDAD APLICADA (KG)</th>
+                            <th>FECHA DE APLICACIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LOTE-4532-CHL</td>
+                            <td>Juan Pérez</td>
+                            <td class="qty-highlight">120 kg</td>
+                            <td>2025-10-10</td>
+                        </tr>
+                        <tr>
+                            <td>LOTE-7890-TOM</td>
+                            <td>María Sánchez</td>
+                            <td>80 kg</td>
+                            <td>2025-10-05</td>
+                        </tr>
+                        <tr>
+                            <td>LOTE-1122-PEP</td>
+                            <td>Carlos López</td>
+                            <td>55 kg</td>
+                            <td>2025-09-28</td>
+                        </tr>
+                        <tr>
+                            <td>LOTE-0045-AJO</td>
+                            <td>Juan Pérez</td>
+                            <td>30 kg</td>
+                            <td>2025-09-25</td>
+                        </tr>
+                        <tr>
+                            <td>LOTE-9980-FRE</td>
+                            <td>Carlos López</td>
+                            <td>90 kg</td>
+                            <td>2025-09-20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination-container">
+                <span class="pagination-info">Mostrando 1 a 5 de 48 aplicaciones</span>
+                <div class="pagination-controls">
+                    <button class="pagination-button disabled">Anterior</button>
+                    <button class="pagination-button active">1</button>
+                    <button class="pagination-button">2</button>
+                    <button class="pagination-button">3</button>
+                    <button class="pagination-button">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

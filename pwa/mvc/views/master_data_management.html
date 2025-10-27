@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="../../public/css/master_data_management.css" />
+
+<div class="main-container">
+    <a href="/login/auth" class="back-to-home-button" title="Regresar a la página principal">
+        <span class="back-icon">←</span> Regresar al Inicio
+    </a>
+    
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">🔗</span>
+            <h1 class="header-title">Gestión de Catálogos Maestros</h1>
+            <p class="header-subtitle">Administración central de Cultivos y Variedades.</p>
+        </div>
+    </header>
+
+    <div class="list-panel">
+        <div class="list-header">
+            <h2 class="list-title">Listado de Cultivos Activos (Total: 5)</h2>
+            <button class="action-button primary-button">
+                + Agregar Nuevo Cultivo
+            </button>
+        </div>
+
+        <div class="table-container">
+            <table class="master-data-table">
+                <thead>
+                    <tr>
+                        <th>ID INTERNO</th>
+                        <th>NOMBRE DEL CULTIVO</th>
+                        <th>VARIEDAD PRINCIPAL</th>
+                        <th>CICLO PROMEDIO (DÍAS)</th>
+                        <th class="actions-col">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="id-tag">CULT-101</span></td>
+                        <td>Chile Habanero</td>
+                        <td>Naranja Campeche</td>
+                        <td>115</td>
+                        <td class="actions-col">
+                            <a href="#" class="action-link link-edit">Editar</a>
+                            <a href="#" class="action-link link-delete">Eliminar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="id-tag">CULT-205</span></td>
+                        <td>Tomate Saladette</td>
+                        <td>Santa Cruz (SC-14)</td>
+                        <td>130</td>
+                        <td class="actions-col">
+                            <a href="#" class="action-link link-edit">Editar</a>
+                            <a href="#" class="action-link link-delete">Eliminar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="id-tag">CULT-302</span></td>
+                        <td>Pepino</td>
+                        <td>Poinsett 76</td>
+                        <td>90</td>
+                        <td class="actions-col">
+                            <a href="#" class="action-link link-edit">Editar</a>
+                            <a href="#" class="action-link link-delete">Eliminar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="id-tag">CULT-410</span></td>
+                        <td>Calabacita</td>
+                        <td>Grey Zucchini</td>
+                        <td>45</td>
+                        <td class="actions-col">
+                            <a href="#" class="action-link link-edit">Editar</a>
+                            <a href="#" class="action-link link-delete">Eliminar</a>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td><span class="id-tag">CULT-505</span></td>
+                        <td>Pimiento Morron</td>
+                        <td>California Wonder</td>
+                        <td>120</td>
+                        <td class="actions-col">
+                            <a href="#" class="action-link link-edit">Editar</a>
+                            <a href="#" class="action-link link-delete">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="pagination-container">
+            <span class="pagination-info">Mostrando 1 a 5 de 5 cultivos</span>
+            <div class="pagination-controls">
+                <button class="pagination-button disabled">Anterior</button>
+                <button class="pagination-button active">1</button>
+                <button class="pagination-button disabled">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
