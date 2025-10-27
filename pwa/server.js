@@ -117,6 +117,10 @@ app.get("/administracion/productores/nuevo", (req, res) => {
     ProducerRegisterController.renderVista(req, res);
 });
 
+app.get("/administracion/productores/editar", (req, res) => {
+    ProducerEditController.renderVista(req, res);
+});
+
 // Fallback
 app.use((req, res) => {
     res.status(404).send("<h2>404 - Página no encontrada</h2>");
