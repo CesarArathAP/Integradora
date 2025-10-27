@@ -12,7 +12,8 @@ const { AdvancedReportGeneratorController } = require("./mvc/controllers/Advance
 const { ProductionReportsController } = require("./mvc/controllers/ProductionReportsController");
 const { SuppliesReportsController } = require("./mvc/controllers/SuppliesReportsController");
 const { MasterDataController } = require("./mvc/controllers/MasterDataController");
-const { ProducerListController } = require("./mvc/controllers/ProducerListController"); // ✅ Nuevo controlador
+const { ProducerListController } = require("./mvc/controllers/ProducerListController");
+const { ProducerDetailController } = require("./mvc/controllers/ProducerDetailController");
 
 const app = express();
 const PORT = 3000;
@@ -65,6 +66,10 @@ app.get("/administracion/catalogos", (req, res) => {
 
 app.get("/administracion/productores", (req, res) => {
     ProducerListController.renderVista(res);
+});
+
+app.get("/administracion/productor/detalle", (req, res) => {
+    ProducerDetailController.renderVista(res); // Aquí llamas al controlador
 });
 
 // Fallback

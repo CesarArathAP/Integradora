@@ -1,0 +1,140 @@
+<link rel="stylesheet" href="../../public/css/producer_detail.css" />
+
+<div class="main-container">
+    <a href="/administracion/productores" class="back-to-list-button" title="Regresar al Listado de Productores">
+        <span class="back-icon">←</span> Regresar al Listado
+    </a>
+    
+    <header class="page-header">
+        <h1 class="header-title">Detalle de Productor: <span class="producer-id-tag">P/001</span></h1>
+        <h2 class="producer-name-title">Juan Pérez Martínez</h2>
+        
+        <div class="header-actions">
+            <button class="action-button secondary-button">
+                <span class="action-icon">📝</span> Editar Perfil
+            </button>
+            <button class="action-button danger-button">
+                <span class="action-icon">❌</span> Suspender Cuenta
+            </button>
+        </div>
+    </header>
+
+    <div class="detail-grid">
+        
+        <div class="left-column">
+            
+            <div class="info-panel contact-info-panel">
+                <h3 class="panel-header">Información de Contacto</h3>
+                <div class="contact-data">
+                    <p><strong>Email:</strong> j.perez@agri.com</p>
+                    <p><strong>Teléfono:</strong> 55 1234 5678</p>
+                    <p><strong>Región:</strong> Querétaro, México</p>
+                    <p><strong>Fecha de Registro:</strong> 2023-01-15</p>
+                </div>
+            </div>
+
+            <div class="info-panel greenhouses-panel">
+                <h3 class="panel-header">Invernaderos Activos <span class="count-tag">(4)</span></h3>
+                
+                <div class="greenhouse-list">
+                    <div class="greenhouse-item">
+                        <span class="inv-name">Inv. Norte (CHL-HABA)</span>
+                        <span class="inv-area">1200 m²</span>
+                    </div>
+                    <div class="greenhouse-item">
+                        <span class="inv-name">Inv. Sur (TOM-SALA)</span>
+                        <span class="inv-area">800 m²</span>
+                    </div>
+                    <div class="greenhouse-item inactive">
+                        <span class="inv-name">Inv. 3 (EN REPOSO)</span>
+                        <span class="inv-area">1000 m²</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="detail-link">Ver Detalle de Invernaderos</a>
+            </div>
+            
+        </div>
+        
+        <div class="right-column">
+            
+            <div class="metrics-grid">
+                
+                <div class="metric-card card-blue">
+                    <h4 class="card-title">Lotes Activos</h4>
+                    <span class="card-value">12</span>
+                </div>
+
+                <div class="metric-card card-green">
+                    <h4 class="card-title">Rendimiento Prom. (T/Ha)</h4>
+                    <span class="card-value highlight-green">45.2</span>
+                </div>
+
+                <div class="metric-card card-red">
+                    <h4 class="card-title">Alertas Pendientes</h4>
+                    <span class="card-value highlight-red">3</span>
+                </div>
+
+                <div class="metric-card card-blue">
+                    <h4 class="card-title">Cumplimiento KPI</h4>
+                    <span class="card-value">89%</span>
+                </div>
+
+            </div>
+            
+            <div class="history-panel">
+                
+                <div class="tabs-container">
+                    <button class="tab-button active">Historial de Lotes (Recientes)</button>
+                    <button class="tab-button">Rendimiento Histórico</button>
+                    <button class="tab-button">Auditoría de Insumos</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="table-container">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>LOTE ID</th>
+                                    <th>CULTIVO</th>
+                                    <th>SIEMBRA</th>
+                                    <th>COSECHA ESTIMADA</th>
+                                    <th>TRAZABILIDAD</th>
+                                    <th class="actions-col">ACCIÓN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="lote-tag">LOTE-4532-CHL</span></td>
+                                    <td>Chile Habanero</td>
+                                    <td>2025-09-01</td>
+                                    <td>2026-01-15</td>
+                                    <td><span class="status-tag tag-alert">ALERTA</span></td>
+                                    <td><a href="#" class="action-link link-trace">Ver Trazabilidad</a></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="lote-tag">LOTE-7890-TOM</span></td>
+                                    <td>Tomate Saladette</td>
+                                    <td>2025-08-20</td>
+                                    <td>2025-12-01</td>
+                                    <td><span class="status-tag tag-ok">OK</span></td>
+                                    <td><a href="#" class="action-link link-trace">Ver Trazabilidad</a></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="lote-tag">LOTE-1122-PEP</span></td>
+                                    <td>Pepino</td>
+                                    <td>2025-06-10</td>
+                                    <td>2025-09-05 <br>(Cosechado)</td>
+                                    <td><span class="status-tag tag-archived">Archivado</span></td>
+                                    <td><a href="#" class="action-link link-trace">Ver Trazabilidad</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="table-footer">Mostrando los 10 lotes más recientes.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
