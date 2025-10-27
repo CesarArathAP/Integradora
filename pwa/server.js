@@ -21,6 +21,7 @@ const { GreenhouseRegisterController } = require("./mvc/controllers/GreenhouseRe
 const { SupplierDetailController } = require("./mvc/controllers/SupplierDetailController");
 const { SupplierRegisterController } = require("./mvc/controllers/SupplierRegisterController");
 const { ProducerRegisterController } = require("./mvc/controllers/ProducerRegisterController");
+const { AdminSettingsController } = require("./mvc/controllers/AdminSettingsController");
 
 const app = express();
 const PORT = 3000;
@@ -105,6 +106,10 @@ app.get("/administracion/proveedores/nuevo", (req, res) => {
 
 app.get("/administracion/productores/nuevo", (req, res) => {
     ProducerRegisterController.renderVista(req, res);
+});
+
+app.get("/administracion/configuracion", (req, res) => {
+    AdminSettingsController.renderVista(req, res);
 });
 
 // Fallback

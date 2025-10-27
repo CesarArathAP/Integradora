@@ -1,0 +1,223 @@
+/* admin_settings.css - Reutilizando la base de estilos de formulario */
+
+/* Variables (Alineación con styles.css) */
+:root {
+    --color-primary-green: #38a169;
+    --color-secondary-green: #d1fae5;
+    --color-blue-dark: #2c5282;
+    --color-gray-text: #4a5568;
+    --color-gray-light: #f7fafc;
+    --color-white: #ffffff;
+    --color-highlight-blue: #3182ce;
+    --color-border: #e2e8f0;
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE STYLES / MOBILE FIRST (<= 767px) */
+/* ------------------------------------------------------------------ */
+
+.main-container {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Botón de Regreso */
+.back-to-list-button {
+    text-decoration: none;
+    color: var(--color-gray-text); 
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: block;
+    padding: 0 0 15px 0;
+    transition: color 0.2s;
+}
+
+.back-to-list-button:hover {
+    color: var(--color-highlight-blue);
+}
+
+/* Header Section */
+.page-header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-icon {
+    font-size: 2rem;
+    color: var(--color-primary-green);
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-blue-dark);
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    margin: 10px 0 0 0;
+}
+
+/* Form Structure */
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-card {
+    background-color: var(--color-gray-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card-section-title {
+    font-size: 1.1rem;
+    color: var(--color-blue-dark);
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 5px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-gray-text);
+    margin-bottom: 5px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    border-color: var(--color-highlight-blue);
+    outline: none;
+}
+
+.help-text {
+    display: block;
+    font-size: 0.75rem;
+    color: #718096;
+    margin-top: 5px;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.action-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.primary-button {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+}
+
+.primary-button:hover {
+    background-color: #2f855a;
+}
+
+.secondary-button {
+    background-color: #cbd5e0;
+    color: var(--color-gray-text);
+}
+
+.secondary-button:hover {
+    background-color: #a0aec0;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERY: DESKTOP (>= 768px) */
+/* ------------------------------------------------------------------ */
+@media (min-width: 768px) {
+    .main-container {
+        padding: 30px;
+    }
+
+    .page-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap; 
+    }
+    
+    .header-info {
+        flex-grow: 1;
+        align-items: center;
+    }
+    
+    .header-subtitle {
+        margin: 0;
+        margin-left: 75px; 
+        align-self: flex-start;
+        font-size: 1rem;
+    }
+
+    /* Columnas para inputs en tarjetas */
+    .form-card > div:not(.card-section-title) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px 30px;
+    }
+    
+    /* El elemento 'full-width' debe expandirse a 2 columnas */
+    .form-card .input-group.full-width {
+        grid-column: span 2; 
+    }
+
+
+    /* Los elementos de acción vuelven a ser horizontales */
+    .form-actions {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .large-button {
+        width: auto;
+    }
+}
