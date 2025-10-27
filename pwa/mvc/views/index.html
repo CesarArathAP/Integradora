@@ -1,101 +1,113 @@
 <link rel="stylesheet" href="../../public/css/index.css" />
 
 <div class="main-panel">
-  <!-- HEADER -->
-  <header class="panel-header">
-    <h1 class="panel-title">Dashboard General</h1>
-    <div class="header-right">
-      <div class="user-actions">
-        <a href="#inicio" class="action-btn" title="Inicio"><span class="icon-home"></span></a>
-        <a href="#perfil" class="action-btn" title="Ver Perfil"><span class="icon-profile"></span></a>
-        <a href="#logout" class="action-btn logout-btn" title="Cerrar Sesión"><span class="icon-logout"></span> Cerrar Sesión</a>
-      </div>
-      <span class="admin-label">Administrador</span>
-    </div>
-  </header>
+    <header class="panel-header">
+        <h1 class="panel-title">Dashboard General</h1>
+        <div class="header-right">
+            <div class="user-actions">
+                <a href="#inicio" class="action-btn" title="Inicio"><span class="icon-home"></span></a>
+                <a href="#perfil" class="action-btn" title="Ver Perfil"><span class="icon-profile"></span></a>
+                <a href="#logout" class="action-btn logout-btn" title="Cerrar Sesión"><span class="icon-logout"></span> Cerrar Sesión</a>
+            </div>
+            <span class="admin-label">Administrador</span>
+        </div>
+    </header>
 
-  <!-- WELCOME -->
-  <section class="welcome-banner">
-    <h2>Dashboard General - Bienvenido, {{ usuario }}</h2>
-    <p>Resumen en tiempo real del sistema de trazabilidad agrícola.</p>
-  </section>
+    <section class="welcome-banner">
+        <h2>Dashboard General - Bienvenido, {{ usuario }}</h2>
+        <p>Resumen en tiempo real del sistema de trazabilidad agrícola.</p>
+    </section>
 
-  <!-- KPI CARDS -->
-  <section class="kpi-grid">
-    <div class="kpi-card">
-      <div class="kpi-header">
-        <span class="kpi-icon">🌾</span>
-        <a href="/login/auth/consulta" class="kpi-link">Ir a Lotes</a>
-      </div>
-      <p class="kpi-value">345</p>
-      <p class="kpi-label">Lotes en diferentes etapas de producción</p>
-    </div>
+    <section class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-header">
+                <span class="kpi-icon">🌾</span>
+                <a href="/login/auth/consulta" class="kpi-link">Ir a Lotes</a>
+            </div>
+            <p class="kpi-value">345</p>
+            <p class="kpi-label">Lotes en diferentes etapas de producción</p>
+        </div>
 
-    <div class="kpi-card">
-      <div class="kpi-header">
-        <span class="kpi-icon">⚠️</span>
-        <a href="/auditoria/datos" class="kpi-link">Ir a Auditoría</a>
-      </div>
-      <p class="kpi-value" style="color:#d32f2f;">12</p>
-      <p class="kpi-label">Inconsistencias que requieren revisión</p>
-    </div>
+        <div class="kpi-card">
+            <div class="kpi-header">
+                <span class="kpi-icon">⚠️</span>
+                <a href="/auditoria/datos" class="kpi-link">Ir a Auditoría</a>
+            </div>
+            <p class="kpi-value" style="color:#d32f2f;">12</p>
+            <p class="kpi-label">Inconsistencias que requieren revisión</p>
+        </div>
 
-    <div class="kpi-card">
-      <div class="kpi-header">
-        <span class="kpi-icon">👩‍🌾</span>
-        <a href="#productores" class="kpi-link">Ir a Productores</a>
-      </div>
-      <p class="kpi-value">48</p>
-      <p class="kpi-label">Productores e invernaderos activos</p>
-    </div>
+        <div class="kpi-card">
+            <div class="kpi-header">
+                <span class="kpi-icon">👩‍🌾</span>
+                <a href="#productores" class="kpi-link">Ir a Productores</a>
+            </div>
+            <p class="kpi-value">48</p>
+            <p class="kpi-label">Productores e invernaderos activos</p>
+        </div>
 
-    <div class="kpi-card">
-      <div class="kpi-header">
-        <span class="kpi-icon">📋</span>
-        <a href="/historial/exportaciones" class="kpi-link">Ir a Historial</a>
-      </div>
-      <p class="kpi-value">3</p>
-      <p class="kpi-label">Reportes pendientes por exportar</p>
-    </div>
-  </section>
+        <div class="kpi-card">
+            <div class="kpi-header">
+                <span class="kpi-icon">📋</span>
+                <a href="/historial/exportaciones" class="kpi-link">Ir a Historial</a>
+            </div>
+            <p class="kpi-value">3</p>
+            <p class="kpi-label">Reportes pendientes por exportar</p>
+        </div>
+        
+        <div class="kpi-card">
+            <div class="kpi-header">
+                <span class="kpi-icon">📈</span>
+                <a href="/reportes/produccion" class="kpi-link">Ver Reportes</a>
+            </div>
+            <p class="kpi-value">22</p>
+            <p class="kpi-label">Reportes de Producción finalizados por ciclo</p>
+        </div>
 
-  <!-- CHARTS + ACTIONS -->
-  <section class="charts-grid">
-    <!-- LEFT: CHART -->
-    <div class="chart-card">
-      <h3 class="chart-title">Distribución de Lotes por Cultivo</h3>
-      <div class="chart-content chart-bar-placeholder">
-        <p>Aquí irá el gráfico de barras.</p>
-        <ul class="legend">
-          <li><span class="color-cereal"></span> Jitomate</li>
-          <li><span class="color-hortaliza"></span> Chile</li>
-          <li><span class="color-frutal"></span> Pepino</li>
-          <li><span class="color-otro"></span> Pimiento</li>
-        </ul>
-      </div>
-    </div>
+        <div class="kpi-card">
+            <div class="kpi-header">
+                <span class="kpi-icon">🧪</span>
+                <a href="/reportes/consumo" class="kpi-link">Ver Consumo</a>
+            </div>
+            <p class="kpi-value">6</p>
+            <p class="kpi-label">Alertas de desviación de insumos (Mes)</p>
+        </div>
+    </section>
 
-    <!-- RIGHT: ACTIONS -->
-    <div class="actions-card">
-      <h3 class="chart-title">Acciones de Gestión</h3>
+    <section class="charts-grid">
+        <div class="chart-card">
+            <h3 class="chart-title">Distribución de Lotes por Cultivo</h3>
+            <div class="chart-content chart-bar-placeholder">
+                <p>Aquí irá el gráfico de barras.</p>
+                <ul class="legend">
+                    <li><span class="color-cereal"></span> Jitomate</li>
+                    <li><span class="color-hortaliza"></span> Chile</li>
+                    <li><span class="color-frutal"></span> Pepino</li>
+                    <li><span class="color-otro"></span> Pimiento</li>
+                </ul>
+            </div>
+        </div>
 
-      <button class="action-btn action-red">
-        Revisar 12 Alertas en Auditoría
-      </button>
+        <div class="actions-card">
+            <h3 class="chart-title">Acciones de Gestión</h3>
 
-      <button class="action-btn action-green">
-        Generar Reporte Mensual
-      </button>
+            <a href="/auditoria/datos" class="action-btn action-red">
+                Revisar 12 Alertas en Auditoría
+            </a>
 
-      <button class="action-btn action-blue">
-        Gestionar Catálogos
-      </button>
+            <a href="/reportes/avanzados" class="action-btn action-green">
+                Generar Reporte Mensual
+            </a>
 
-      <div class="footer-info">
-        <p><strong>Último Acceso:</strong><br />
-        Juan Pérez López<br />
-        Hoy, 10:35 AM desde IP 192.168.1.1</p>
-      </div>
-    </div>
-  </section>
+            <button class="action-btn action-blue">
+                Gestionar Catálogos
+            </button>
+
+            <div class="footer-info">
+                <p><strong>Último Acceso:</strong><br />
+                Juan Pérez López<br />
+                Hoy, 10:35 AM desde IP 192.168.1.1</p>
+            </div>
+        </div>
+    </section>
 </div>

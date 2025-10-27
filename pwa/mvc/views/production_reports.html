@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="../../public/css/production_reports.css" />
+
+<div class="main-container">
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">📈</span>
+            <h1 class="header-title">Reportes de Producción y Ciclo</h1>
+            <p class="header-subtitle">Análisis de la duración promedio (siembra a cosecha) por cultivo y productor.</p>
+        </div>
+    </header>
+
+    <div class="filters-container">
+        <div class="filter-group">
+            <label class="filter-label">Cultivo</label>
+            <select class="filter-select">
+                <option value="chile">Chile Habanero</option>
+                <option value="tomate">Tomate Saladette</option>
+                <option value="pepino">Pepino</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label class="filter-label">Productor / Agricultor</label>
+            <select class="filter-select">
+                <option value="all">Todos los Productores</option>
+                <option value="p001">Juan Pérez (P001)</option>
+                <option value="c003">Coop. del Sol (C003)</option>
+            </select>
+        </div>
+
+        <div class="filter-group date-range">
+            <label class="filter-label">Fecha Inicial</label>
+            <input type="date" value="2025-10-23" class="date-input"/>
+        </div>
+        
+        <div class="filter-group date-range">
+            <label class="filter-label">Fecha Final</label>
+            <input type="date" value="2025-10-25" class="date-input"/>
+        </div>
+        
+        <button class="action-button primary-button">
+            Aplicar Filtros
+        </button>
+    </div>
+
+    <div class="metrics-grid top-metrics">
+        <div class="metric-card card-highlight">
+            <h3 class="card-title">Ciclo Promedio del Cultivo (Global)</h3>
+            <span class="card-value large-value highlight-value">115 días</span>
+            <span class="card-subtitle">Siembra a Cosecha</span>
+        </div>
+
+        <div class="metric-card card-secondary">
+            <h3 class="card-title">Ciclo Más Rápido (Lote)</h3>
+            <span class="card-value secondary-value">108 días</span>
+            <span class="card-subtitle">Productor P001, LOTE-4532</span>
+        </div>
+
+        <div class="metric-card card-alert">
+            <h3 class="card-title">Desviación Estándar</h3>
+            <span class="card-value alert-value">± 7 días</span>
+            <span class="card-subtitle">Indica alta variabilidad</span>
+        </div>
+    </div>
+
+    <div class="bottom-sections">
+        <div class="chart-panel panel-left">
+            <h2>Comparativa: Días de Ciclo por Productor</h2>
+            <p class="panel-subtitle">Mide la eficiencia del ciclo productivo promedio vs. el estándar (115 días).</p>
+            
+            <div class="bar-chart-container">
+                <div class="bar-item">
+                    <span class="bar-label">Juan Pérez (P001) <strong class="bar-value">109 días</strong></span>
+                    <div class="progress-bar bar-green" style="width: 75%;"></div>
+                </div>
+
+                <div class="bar-item bar-standard-line">
+                    <span class="bar-label">PROMEDIO GLOBAL <strong class="bar-value">115 días</strong></span>
+                    <hr class="standard-line"/>
+                </div>
+
+                <div class="bar-item">
+                    <span class="bar-label">Coop. del Sol (C003) <strong class="bar-value">125 días</strong></span>
+                    <div class="progress-bar bar-orange" style="width: 85%;"></div>
+                </div>
+            </div>
+            <p class="bar-footer">La barra representa el tiempo: menor longitud = más rápido.</p>
+        </div>
+
+        <div class="chart-panel panel-right">
+            <h2>Desglose por Cultivo y Etapa</h2>
+            <p class="panel-subtitle">Análisis detallado de la duración de cada fase productiva.</p>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>CULTIVO</th>
+                            <th>DÍAS SIEMBRA – TRANSPLANTE</th>
+                            <th>DÍAS TRANSPLANTE – COSECHA</th>
+                            <th class="total-col">CICLO TOTAL (DÍAS)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chile Habanero</td>
+                            <td>35 días</td>
+                            <td>80 días</td>
+                            <td class="total-col total-highlight">115 días</td>
+                        </tr>
+                        <tr>
+                            <td>Tomate Saladette</td>
+                            <td>30 días</td>
+                            <td>100 días</td>
+                            <td class="total-col">130 días</td>
+                        </tr>
+                        <tr>
+                            <td>Pepino</td>
+                            <td>25 días</td>
+                            <td>65 días</td>
+                            <td class="total-col">90 días</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,6 +9,7 @@ const { ViewLotDetailController } = require("./mvc/controllers/ViewLotDetailCont
 const { DataAuditController } = require("./mvc/controllers/DataAuditController");
 const { ExportHistoryController } = require("./mvc/controllers/ExportHistoryController");
 const { AdvancedReportGeneratorController } = require("./mvc/controllers/AdvancedReportGeneratorController");
+const { ProductionReportsController } = require("./mvc/controllers/ProductionReportsController");
 
 const app = express();
 const PORT = 3000;
@@ -45,6 +46,10 @@ app.get("/historial/exportaciones", (req, res) => {
 
 app.get("/reportes/avanzados", (req, res) => {
     AdvancedReportGeneratorController.renderVista(res);
+});
+
+app.get("/reportes/produccion", (req, res) => {
+    ProductionReportsController.renderVista(res);
 });
 
 // Fallback
