@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="../../public/css/producer_edit.css" />
+<div class="main-container">
+    
+    <a href="/administracion/productores/detalle/P001" class="back-to-list-button" title="Regresar al Detalle del Productor">
+        ← Regresar al Detalle
+    </a>
+    
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">✍️</span>
+            <h1 class="header-title">Editar Productor: <span class="producer-id-tag">P/001</span></h1>
+        </div>
+        <p class="header-subtitle">Modifica la información del productor **Juan Pérez Martínez** y guarda los cambios.</p>
+    </header>
+
+    <form class="registration-form" onsubmit="alert('Simulación: Información de Productor P/001 Actualizada'); return false;">
+        
+        <div class="form-card">
+            <h3 class="card-section-title">Identificación Personal y Legal</h3>
+            
+            <div class="input-group">
+                <label for="nombre">Nombre(s) (*)</label>
+                <input type="text" id="nombre" name="nombre" value="Juan" required>
+            </div>
+
+            <div class="input-group">
+                <label for="apellido">Apellidos (*)</label>
+                <input type="text" id="apellido" name="apellido" value="Pérez Martínez" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="rfc">RFC / ID Fiscal (*)</label>
+                <input type="text" id="rfc" name="rfc" value="PEMJ800101XYZ" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="curp">CURP (Opcional)</label>
+                <input type="text" id="curp" name="curp" value="PMJJ800101HXXXXX">
+            </div>
+
+            <div class="input-group full-width">
+                <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="1980-01-01">
+            </div>
+        </div>
+        
+        <div class="form-card">
+            <h3 class="card-section-title">Datos de Contacto y Operación</h3>
+            
+            <div class="input-group">
+                <label for="email">Email (*)</label>
+                <input type="email" id="email" name="email" value="j.perez@agri.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="telefono">Teléfono (*)</label>
+                <input type="tel" id="telefono" name="telefono" value="55 1234 5678" required>
+            </div>
+
+            <div class="input-group full-width">
+                <label for="direccion">Dirección/Domicilio Principal (*)</label>
+                <input type="text" id="direccion" name="direccion" value="Calle del Maíz #5, Col. El Campo, Querétaro" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="region_op">Región de Operación</label>
+                <input type="text" id="region_op" name="region_op" value="Querétaro, Guanajuato" required>
+            </div>
+
+            <div class="input-group">
+                <label for="tipo_cultivo">Tipo de Cultivo Principal</label>
+                <select id="tipo_cultivo" name="tipo_cultivo">
+                    <option value="Hortalizas" selected>Hortalizas</option>
+                    <option value="Frutales">Frutales</option>
+                    <option value="Granos">Granos</option>
+                    <option value="Otro">Otro/Mixto</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="action-button primary-button large-button">
+                Guardar Cambios del Productor
+            </button>
+            <button type="reset" class="action-button secondary-button large-button">
+                Restablecer Valores
+            </button>
+        </div>
+    </form>
+</div>
+
+<style>
+/* Estilo específico para full-width en el grid de la tarjeta */
+@media (min-width: 768px) {
+    .form-card .input-group.full-width {
+        grid-column: 1 / -1; /* Ocupa las dos columnas */
+    }
+}
+</style>

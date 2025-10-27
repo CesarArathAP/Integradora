@@ -22,6 +22,7 @@ const { SupplierDetailController } = require("./mvc/controllers/SupplierDetailCo
 const { SupplierRegisterController } = require("./mvc/controllers/SupplierRegisterController");
 const { ProducerRegisterController } = require("./mvc/controllers/ProducerRegisterController");
 const { AdminSettingsController } = require("./mvc/controllers/AdminSettingsController");
+const { ProducerEditController } = require("./mvc/controllers/ProducerEditController");
 
 const app = express();
 const PORT = 3000;
@@ -110,6 +111,10 @@ app.get("/administracion/productores/nuevo", (req, res) => {
 
 app.get("/administracion/configuracion", (req, res) => {
     AdminSettingsController.renderVista(req, res);
+});
+
+app.get("/administracion/productores/nuevo", (req, res) => {
+    ProducerRegisterController.renderVista(req, res);
 });
 
 // Fallback
