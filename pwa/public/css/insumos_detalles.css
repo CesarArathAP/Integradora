@@ -1,0 +1,275 @@
+/* ================================================================== */
+/* VARIABLES DE COLOR (Reutilizadas del listado)            */
+/* ================================================================== */
+:root {
+    --color-primary-green: #38a169;       /* Verde principal */
+    --color-secondary-green: #d1fae5;     
+    --color-alert-red: #e53e3e;           /* Rojo para alertas/inactivos/peligro */
+    --color-blue-dark: #2c5282;           /* Azul oscuro para títulos/texto fuerte */
+    --color-gray-text: #4a5568;           /* Gris oscuro para texto general */
+    --color-gray-light: #f7fafc;          /* Gris muy claro */
+    --color-white: #ffffff;
+    --color-highlight-blue: #3182ce;      /* Azul de enlace/detalle */
+    --color-border: #e2e8f0;              /* Color de borde principal */
+    --color-background-page: #edf2f7;     /* Fondo de página */
+    
+    /* Colores Específicos para Tags (Reutilizados) */
+    --color-tag-fertilizante: #38a169;    /* Verde */
+    --color-tag-semilla: #ecc94b;         
+    --color-tag-fitosanitario: #e53e3e;   
+    --color-tag-material: #4299e1;        
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE & REUTILIZACIÓN DE COMPONENTES                                */
+/* ------------------------------------------------------------------ */
+body {
+    background-color: var(--color-background-page);
+}
+
+.main-container {
+    font-family: Arial, sans-serif;
+    max-width: 1000px; /* Ancho ajustado para detalle */
+    margin: 20px auto;
+    padding: 30px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Back Button (Reutilizado) */
+.back-to-home-button {
+    text-decoration: none;
+    color: var(--color-gray-text); 
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0 20px 0;
+    transition: color 0.2s;
+}
+.back-icon { margin-right: 8px; }
+.back-to-home-button:hover { color: var(--color-highlight-blue); }
+
+/* Header Section (Adaptado) */
+.page-header {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--color-border);
+}
+.header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.header-icon { font-size: 2rem; color: var(--color-blue-dark); margin-bottom: 5px; }
+.header-title { font-size: 2rem; font-weight: bold; color: var(--color-blue-dark); margin: 0; }
+.header-subtitle { font-size: 0.95rem; color: var(--color-gray-text); margin: 0; }
+
+/* Status Tag (Reutilizado) */
+.status-tag {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: var(--color-white);
+    display: inline-block;
+    text-align: center;
+    background-color: var(--color-primary-green);
+}
+
+/* Action Buttons (Reutilizado) */
+.actions-panel {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+}
+.action-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+.primary-button { background-color: var(--color-primary-green); color: var(--color-white); }
+.primary-button:hover { background-color: #2f855a; }
+.secondary-button { background-color: var(--color-gray-light); color: var(--color-gray-text); border: 1px solid var(--color-border); }
+.secondary-button:hover { background-color: #e2e8f0; }
+.danger-button { background-color: var(--color-alert-red); color: var(--color-white); }
+.danger-button:hover { background-color: #c53030; }
+
+
+/* ------------------------------------------------------------------ */
+/* ESTILOS DE DETALLE ESPECÍFICOS                                     */
+/* ------------------------------------------------------------------ */
+
+.detail-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Columna única en móvil */
+}
+
+.detail-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 15px 20px;
+    background-color: var(--color-gray-light);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    color: var(--color-blue-dark);
+    margin: 0;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+}
+
+.detail-item label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-gray-text);
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.data-value {
+    font-size: 1rem;
+    color: var(--color-blue-dark);
+    font-weight: normal;
+    margin: 0;
+}
+
+.highlight-value {
+    font-weight: bold;
+    color: var(--color-highlight-blue);
+}
+
+.description-text {
+    font-style: italic;
+    color: var(--color-gray-text);
+}
+
+.separator {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 20px 0;
+}
+
+/* Estilos de Stock */
+.inventory-item {
+    background-color: var(--color-secondary-green);
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 4px solid var(--color-primary-green);
+}
+.stock-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-primary-green);
+    display: inline-block;
+}
+.unit-of-measure {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-gray-text);
+    margin-top: 5px;
+}
+
+/* Estilos de Proveedor/Enlace */
+.link-value a {
+    color: var(--color-highlight-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+.link-value a:hover {
+    text-decoration: underline;
+}
+.data-missing {
+    font-style: italic;
+    color: var(--color-alert-red);
+}
+
+/* Estilos de Auditoría */
+.audit-card {
+    border-left: 4px solid var(--color-alert-red);
+}
+.audit-header {
+    background-color: #fcebeb; /* Fondo claro para la alerta */
+}
+.audit-status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-alert-red);
+    padding: 4px 8px;
+    border: 1px dashed var(--color-alert-red);
+    border-radius: 4px;
+}
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px 20px;
+}
+.rules-grid .detail-item {
+    margin-bottom: 0;
+}
+.alert-value {
+    color: var(--color-alert-red);
+    font-weight: bold;
+}
+
+/* Tags de Tipo (Reutilizados) */
+.type-tag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-white);
+    display: inline-block;
+}
+.tag-fertilizante { background-color: var(--color-tag-fertilizante); color: var(--color-white); }
+    
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERY: ESCRITORIO (>= 768px)                                 */
+/* ------------------------------------------------------------------ */
+@media (min-width: 768px) {
+    .detail-grid {
+        /* Dos columnas principales: 60% para info primaria, 40% para secundaria */
+        grid-template-columns: 3fr 2fr;
+    }
+
+    .full-span {
+        grid-column: 1 / -1; /* Ocupa todo el ancho */
+    }
+    
+    .header-info {
+        flex-direction: row;
+        align-items: center;
+    }
+    .header-icon {
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+}

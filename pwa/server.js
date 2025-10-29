@@ -7,7 +7,7 @@ const { AuthController } = require("./mvc/controllers/AuthController");
 const { ViewConsultController } = require("./mvc/controllers/ViewConsult");
 const { ViewLotDetailController } = require("./mvc/controllers/ViewLotDetailController");
 const { DataAuditController } = require("./mvc/controllers/DataAuditController");
-const { ExportHistoryController } = require("./mvc/controllers/ExportHistoryController");
+// const { ExportHistoryController } = require("./mvc/controllers/ExportHistoryController");
 const { AdvancedReportGeneratorController } = require("./mvc/controllers/AdvancedReportGeneratorController");
 const { ProductionReportsController } = require("./mvc/controllers/ProductionReportsController");
 const { SuppliesReportsController } = require("./mvc/controllers/SuppliesReportsController");
@@ -23,6 +23,9 @@ const { SupplierRegisterController } = require("./mvc/controllers/SupplierRegist
 const { ProducerRegisterController } = require("./mvc/controllers/ProducerRegisterController");
 const { AdminSettingsController } = require("./mvc/controllers/AdminSettingsController");
 const { ProducerEditController } = require("./mvc/controllers/ProducerEditController");
+const { InsumosDetallesController } = require("./mvc/controllers/insumoController");
+const { SuppliesController } = require("./mvc/controllers/SuppliesController");
+const { EditarInsumoController } = require("./mvc/controllers/EditarInsumoController");
 
 const app = express();
 const PORT = 3000;
@@ -53,9 +56,9 @@ app.get("/auditoria/datos", (req, res) => {
     DataAuditController.renderVista(res);
 });
 
-app.get("/historial/exportaciones", (req, res) => {
-    ExportHistoryController.renderVista(res);
-});
+// app.get("/historial/exportaciones", (req, res) => {
+    // ExportHistoryController.renderVista(res);
+// });
 
 app.get("/reportes/avanzados", (req, res) => {
     AdvancedReportGeneratorController.renderVista(res);
@@ -119,6 +122,18 @@ app.get("/administracion/productores/nuevo", (req, res) => {
 
 app.get("/administracion/productores/editar", (req, res) => {
     ProducerEditController.renderVista(req, res);
+});
+
+app.get("/administracion/insumos", (req, res) => {
+    SuppliesController.renderVista(req, res);
+});
+
+app.get("/administracion/insumos/detalle", (req, res) => {
+    InsumosDetallesController.renderVista(req, res);
+});
+
+app.get("/insumos/editar/id", (req, res) => {
+    EditarInsumoController.renderVista(req, res);
 });
 
 // Fallback

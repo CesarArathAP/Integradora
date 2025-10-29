@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="../../public/css/supplies_list.css" />
+
+<div class="main-container">
+    <a href="/login/auth" class="back-to-home-button" title="Regresar a la página principal">
+        <span class="back-icon">←</span> Regresar al Inicio
+    </a>
+    
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">🧪</span>
+            <h1 class="header-title">Catálogo Maestro de Insumos</h1>
+            <p class="header-subtitle">Listado y gestión de fertilizantes, semillas, fitosanitarios y otros materiales agrícolas.</p>
+        </div>
+    </header>
+
+    <div class="filters-actions-container">
+        <input type="text" placeholder="Buscar por Nombre, Código, Tipo o Proveedor..." class="filter-input"/>
+        
+        <select class="filter-select">
+            <option value="all">Tipo: Todos</option>
+            <option value="fertilizante">Fertilizante</option>
+            <option value="semilla">Semilla</option>
+            <option value="fitosanitario">Fitosanitario</option>
+            <option value="material">Material/Otro</option>
+        </select>
+        
+        <!-- <a href="/administracion/insumos/nuevo" class="action-button primary-button large-button">
+            + Registrar Nuevo Insumo
+        </a> -->
+    </div>
+
+    <div class="list-panel">
+        <h2 class="list-title">Insumos Registrados <span class="total-count">(Total: 22)</span></h2>
+
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>CÓDIGO INTERNO</th>
+                        <th>NOMBRE DEL INSUMO</th>
+                        <th>TIPO</th>
+                        <th>UNIDAD DE MEDIDA</th>
+                        <th>STOCK (SIMULADO)</th>
+                        <th class="actions-col">ACCIÓN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="id-tag">INS-F001</span></td>
+                        <td>Fertilizante Triple 17 (NPK)</td>
+                        <td><span class="type-tag tag-fertilizante">Fertilizante</span></td>
+                        <td>Kg</td>
+                        <td class="stock-ok">1,500 Kg</td>
+                        <td class="actions-col">
+                            <a href="/administracion/insumos/detalle" class="action-link link-detail" title="Ver detalle">Ver Detalle</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="id-tag">INS-S005</span></td>
+                        <td>Semilla de Chile Habanero MX</td>
+                        <td><span class="type-tag tag-semilla">Semilla</span></td>
+                        <td>Unidades</td>
+                        <td class="stock-low">50,000 Uds</td>
+                        <td class="actions-col">
+                            <a href="/administracion/insumos/detalle" class="action-link link-detail" title="Ver detalle">Ver Detalle</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="id-tag">INS-P010</span></td>
+                        <td>Plaguicida Orgánico BIO-SAFE</td>
+                        <td><span class="type-tag tag-fitosanitario">Fitosanitario</span></td>
+                        <td>Litro</td>
+                        <td class="stock-ok">250 Litros</td>
+                        <td class="actions-col">
+                            <a href="/administracion/insumos/detalle" class="action-link link-detail" title="Ver detalle">Ver Detalle</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="id-tag">INS-M103</span></td>
+                        <td>Malla Antigranizo UV-Max</td>
+                        <td><span class="type-tag tag-material">Material</span></td>
+                        <td>m²</td>
+                        <td class="stock-alert">100 m²</td>
+                        <td class="actions-col">
+                            <a href="/administracion/insumos/detalle" class="action-link link-detail" title="Ver detalle">Ver Detalle</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="id-tag">INS-F005</span></td>
+                        <td>Calcio Líquido Corrector</td>
+                        <td><span class="type-tag tag-fertilizante">Fertilizante</span></td>
+                        <td>Litro</td>
+                        <td class="stock-ok">80 Litros</td>
+                        <td class="actions-col">
+                            <a href="/administracion/insumos/detalle" class="action-link link-detail" title="Ver detalle">Ver Detalle</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="pagination-container">
+            <span class="pagination-info">Mostrando 1 a 10 de 22 Insumos</span>
+            <div class="pagination-controls">
+                <button class="pagination-button disabled">Anterior</button>
+                <button class="pagination-button active">1</button>
+                <button class="pagination-button">2</button>
+                <button class="pagination-button">3</button>
+                <button class="pagination-button">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>

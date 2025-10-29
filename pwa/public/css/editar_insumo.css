@@ -1,0 +1,171 @@
+/* Variables (reusamos las mismas) */
+:root {
+    --color-primary-green: #38a169;
+    --color-secondary-green: #d1fae5;
+    --color-alert-red: #e53e3e;
+    --color-danger: #c53030;
+    --color-blue-dark: #2c5282;
+    --color-gray-text: #4a5568;
+    --color-gray-light: #f7fafc;
+    --color-white: #ffffff;
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE STYLES / MOBILE FIRST (<= 767px) */
+/* ------------------------------------------------------------------ */
+.main-container {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header Section */
+.page-header {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.header-icon {
+    font-size: 1.8rem;
+    color: var(--color-primary-green);
+    margin-bottom: 5px;
+}
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-blue-dark);
+    margin: 0;
+}
+#insumo-nombre-edit {
+    color: var(--color-alert-red); 
+}
+.header-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    margin: 0;
+}
+.action-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.primary-button {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+}
+.primary-button:hover {
+    background-color: #2f855a;
+}
+.secondary-button {
+    background-color: #e2e8f0;
+    color: var(--color-gray-text);
+}
+.secondary-button:hover {
+    background-color: #cbd5e0;
+}
+.danger-button {
+    background-color: var(--color-alert-red);
+    color: var(--color-white);
+    margin-left: 10px;
+}
+.danger-button:hover {
+    background-color: var(--color-danger);
+}
+
+/* Form Section */
+.form-container {
+    padding: 10px 0;
+}
+.section-title {
+    font-size: 1.2rem;
+    color: var(--color-blue-dark);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--color-secondary-green);
+}
+.form-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; 
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--color-gray-text);
+    font-size: 0.9rem;
+}
+.form-group input, .form-group select, .form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--color-primary-green);
+    outline: none;
+}
+.form-group input[readonly] {
+    background-color: var(--color-gray-light);
+    color: #a0aec0;
+}
+.full-width {
+    grid-column: 1 / -1; 
+}
+
+/* Button Group */
+.button-group {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERY: TABLET Y ESCRITORIO (>= 768px) */
+/* ------------------------------------------------------------------ */
+@media (min-width: 768px) {
+    .page-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-info {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* Form Grid: 2 Column Layout */
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .form-group.full-width {
+        grid-column: 1 / 3; 
+    }
+}

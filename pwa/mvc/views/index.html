@@ -2,17 +2,17 @@
 
 <div class="main-panel">
     <header class="panel-header">
-        <h1 class="panel-title">Dashboard General</h1>
+        <!-- <h1 class="panel-title">Dashboard General</h1> -->
         <div class="header-right">
             <div class="user-actions">
                 <a href="#inicio" class="action-btn" title="Inicio"><span class="icon-home"></span></a>
                 <a href="#perfil" class="action-btn" title="Ver Perfil"><span class="icon-profile"></span></a>
             </div>
-            <span class="admin-label">Administrador</span>
         </div>
     </header>
 
     <section class="welcome-banner">
+        <span class="admin-label">Administrador</span>
         <h2>Dashboard General - Bienvenido, {{ usuario }}</h2>
         <p>Resumen en tiempo real del sistema de trazabilidad agrícola.</p>
     </section>
@@ -48,10 +48,10 @@
         <div class="kpi-card">
             <div class="kpi-header">
                 <span class="kpi-icon">📋</span>
-                <a href="/historial/exportaciones" class="kpi-link">Ir a Historial</a>
+                <a href="/administracion/insumos" class="kpi-link">Insumos</a>
             </div>
             <p class="kpi-value">3</p>
-            <p class="kpi-label">Reportes pendientes por exportar</p>
+            <p class="kpi-label">Listado de Insumos</p>
         </div>
         
         <div class="kpi-card">

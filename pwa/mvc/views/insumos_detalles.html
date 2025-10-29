@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="../../public/css/insumos_detalles.css" />
+
+<div class="main-container">
+    <a href="/administracion/insumos/listado" class="back-to-home-button" title="Regresar al listado de insumos">
+        <span class="back-icon">←</span> Regresar al Listado
+    </a>
+    
+    <header class="page-header">
+        <div class="header-info">
+            <span class="header-icon">🔬</span>
+            <h1 class="header-title">Detalle del Insumo: Fertilizante NPK (20-20-20) Granular</h1>
+            <p class="header-subtitle">Información técnica, logística y regulatoria del producto.</p>
+        </div>
+    </header>
+
+    <div class="detail-grid">
+        <div class="detail-card info-card primary-info">
+            <div class="card-header">
+                <h3 class="card-title">Datos Generales</h3>
+                <span class="status-tag tag-active">Activo</span>
+            </div>
+            <div class="card-content">
+                <div class="detail-item">
+                    <label>Código Interno:</label>
+                    <p class="data-value highlight-value">F-NPK-001</p>
+                </div>
+                <div class="detail-item">
+                    <label>Tipo de Insumo:</label>
+                    <p class="data-value type-tag tag-fertilizante">Fertilizante</p>
+                </div>
+                <div class="detail-item full-width">
+                    <label>Descripción Técnica:</label>
+                    <p class="data-value description-text">Fórmula equilibrada para la etapa de desarrollo vegetativo. Soluble en agua.</p>
+                </div>
+                <hr class="separator"/>
+                <div class="detail-item inventory-item">
+                    <label>Stock Disponible:</label>
+                    <p class="data-value stock-value stock-ok">1,500 Kg</p>
+                    <span class="unit-of-measure">Unidad de Inventario: Kg</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-card info-card secondary-info">
+            <div class="card-header">
+                <h3 class="card-title">Información de Suministro</h3>
+            </div>
+            <div class="card-content">
+                <div class="detail-item">
+                    <label>Proveedor Principal:</label>
+                    <p class="data-value link-value">
+                        <a href="/administracion/proveedores/68fbffcf567c1a24bef86be6" class="action-link link-detail">AgroQuímicos del Centro</a>
+                    </p>
+                </div>
+                <div class="detail-item">
+                    <label>Fecha de Registro:</label>
+                    <p class="data-value">10 de Enero, 2025</p>
+                </div>
+                <div class="detail-item">
+                    <label>Hoja de Seguridad (MSDS):</label>
+                    <p class="data-value">
+                        <span class="data-missing">No proporcionada</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-card audit-card full-span">
+            <div class="card-header audit-header">
+                <h3 class="card-title">Reglas de Auditoría y Uso</h3>
+                <span class="audit-status audit-required">Requiere Auditoría/Control Estricto</span>
+            </div>
+            <div class="card-content rules-grid">
+                <div class="detail-item">
+                    <label>Dosis Máxima Recomendada:</label>
+                    <p class="data-value alert-value">2.5</p>
+                </div>
+                <div class="detail-item">
+                    <label>Unidad Dosis Máxima:</label>
+                    <p class="data-value">Kg/100m2</p>
+                </div>
+                <div class="detail-item">
+                    <label>Días de Carencia (Pre-cosecha):</label>
+                    <p class="data-value">0 Días</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="actions-panel">
+        <a href="/insumos/editar/id" class="action-button primary-button">
+            Editar Insumo
+        </a>
+        <button class="action-button secondary-button danger-button">
+            Dar de Baja
+        </button>
+    </div>
+</div>
